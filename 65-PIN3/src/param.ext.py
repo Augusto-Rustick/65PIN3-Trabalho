@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 
 def lane_param(file):
-
+ 
     with open(file, 'r') as f:
         data = f.read()
     
@@ -59,10 +59,15 @@ def network_param(nodeFile, edgeFile):
                 if node_to in set:
                     adj_forbidden.append(clean_connections[counter])
                 counter += 1
-            return edges.get(adj_forbidden[0] + adj_forbidden[1]) is None
+            if len(adj_forbidden) == 2:
+                return edges.get(adj_forbidden[0] + adj_forbidden[1]) is None
+            else:
+                return edges.get(adj_forbidden[0]) is None
 
         return clean_connections
 
+    def return_true(node, node_to=None):
+        return True
 
     initial_network_connection = {}
     for node_id, (from_node, to_node) in edges.items():
@@ -80,9 +85,10 @@ def network_param(nodeFile, edgeFile):
                 node_id = from_ + to
                 distance_ = distance((to_x, to_y), (from_x, from_y))
                 if (int(distance_) <= 100 and valid_suggestions.get(node_id) is None):
-                    if (not_crossroads(from_, to)):
-                        valid_suggestions[node_id] = distance_
-                        return_params.append(node_id)
+                    if (return_true(from_, to)):
+                        if node_id[::-1] not in valid_suggestions:
+                            valid_suggestions[node_id] = distance_
+                            return_params.append(node_id)
 
     return return_params
 

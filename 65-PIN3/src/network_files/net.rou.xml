@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-04-28 20:35:24 by Eclipse SUMO duarouter Version 1.16.0
+<!-- generated on 2023-04-29 11:41:38 by Eclipse SUMO duarouter Version 1.16.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
@@ -21,7 +21,7 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vehicle id="0" depart="0.00">
-        <route edges="HG GF FC CA AC"/>
+        <route edges="HG GC CA AC"/>
     </vehicle>
     <vehicle id="1" depart="1.00">
         <route edges="DE ED DA"/>
@@ -30,7 +30,7 @@
         <route edges="JG GJ JL LI IF"/>
     </vehicle>
     <vehicle id="3" depart="3.00">
-        <route edges="KJ JM MK KH HE EB BD"/>
+        <route edges="KJ JG GD DB BD"/>
     </vehicle>
     <vehicle id="4" depart="4.00">
         <route edges="FG GC CA AC"/>
@@ -42,7 +42,7 @@
         <route edges="AC CG"/>
     </vehicle>
     <vehicle id="7" depart="7.00">
-        <route edges="HK KH HG GJ"/>
+        <route edges="HK KG GJ"/>
     </vehicle>
     <vehicle id="8" depart="8.00">
         <route edges="DA AD DH HD"/>
@@ -57,7 +57,7 @@
         <route edges="EB BA AC CD"/>
     </vehicle>
     <vehicle id="12" depart="12.00">
-        <route edges="LJ JM MK KH HE EB"/>
+        <route edges="LJ JK KH HE EB"/>
     </vehicle>
     <vehicle id="13" depart="13.00">
         <route edges="BD"/>
@@ -93,7 +93,7 @@
         <route edges="BD DE"/>
     </vehicle>
     <vehicle id="24" depart="24.00">
-        <route edges="HG GK KH HE ED"/>
+        <route edges="HG GH HE ED"/>
     </vehicle>
     <vehicle id="25" depart="25.00">
         <route edges="ED DA"/>
@@ -129,7 +129,7 @@
         <route edges="DA AC CF FI IL LJ"/>
     </vehicle>
     <vehicle id="36" depart="36.00">
-        <route edges="KJ JM MK KH HD DH"/>
+        <route edges="KJ JG GD DH"/>
     </vehicle>
     <vehicle id="37" depart="37.00">
         <route edges="HK KH HE EH"/>
@@ -153,7 +153,7 @@
         <route edges="MK KH HG GF"/>
     </vehicle>
     <vehicle id="44" depart="44.00">
-        <route edges="BD DB BA AD"/>
+        <route edges="BD DA AD"/>
     </vehicle>
     <vehicle id="45" depart="45.00">
         <route edges="BE EH HG"/>
@@ -165,7 +165,7 @@
         <route edges="BA AB BE EH"/>
     </vehicle>
     <vehicle id="48" depart="48.00">
-        <route edges="MK KG GH"/>
+        <route edges="MK KH HG GH"/>
     </vehicle>
     <vehicle id="49" depart="49.00">
         <route edges="MJ JM MK KH"/>
@@ -180,13 +180,13 @@
         <route edges="DC CG GH HG"/>
     </vehicle>
     <vehicle id="53" depart="53.00">
-        <route edges="BE EH HG GF FG"/>
+        <route edges="BE EB BA AC CF FG"/>
     </vehicle>
     <vehicle id="54" depart="54.00">
         <route edges="FI IL LJ"/>
     </vehicle>
     <vehicle id="55" depart="55.00">
-        <route edges="KJ JM MK KH HE ED DC"/>
+        <route edges="KJ JG GD DC"/>
     </vehicle>
     <vehicle id="56" depart="56.00">
         <route edges="GF FC CF"/>
@@ -270,13 +270,13 @@
         <route edges="KH HE EB BA"/>
     </vehicle>
     <vehicle id="83" depart="83.00">
-        <route edges="DB BA AC CF FI IF"/>
+        <route edges="DB BD DG GJ JL LI IF"/>
     </vehicle>
     <vehicle id="84" depart="84.00">
         <route edges="DA AC CA"/>
     </vehicle>
     <vehicle id="85" depart="85.00">
-        <route edges="LI IJ JG GK"/>
+        <route edges="LI IF FG GK"/>
     </vehicle>
     <vehicle id="86" depart="86.00">
         <route edges="GC CG GJ JK"/>
@@ -285,7 +285,7 @@
         <route edges="JL LI IF FC CG"/>
     </vehicle>
     <vehicle id="88" depart="88.00">
-        <route edges="BD DG GF FG"/>
+        <route edges="BD DC CF FG"/>
     </vehicle>
     <vehicle id="89" depart="89.00">
         <route edges="FG GC"/>

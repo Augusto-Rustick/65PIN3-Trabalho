@@ -10,6 +10,7 @@ seed = sys.argv[3]
 instance = sys.argv[4]
 combination = ''.join(sys.argv[5])
 conf_params = ' '.join(sys.argv[6:])
+net = sys.argv[-1]
 
 # Call Python scripts that start simulation
 command = "python runner.py " +  conf_params + " " + instance
@@ -22,7 +23,7 @@ err_file = './c' + str(configuration_id) + '-' + str(instance_id) + '-' + r + '.
 # Execute
 outf = open(out_file, "w")
 errf = open(err_file, "w")
-return_code = subprocess.call(command, stdout = outf, stderr = errf, shell = True)
+return_code = subprocess.call(command, stdout=outf, stderr=errf, shell=True)
 outf.close()
 errf.close()
 
@@ -43,6 +44,11 @@ result.close()
 lastLine = int(float(lastLine.replace('\n', '')))
 print(lastLine)
 
+# Save configuration to file
+config_file = f'./irace_files/{net}/configurations.txt'
+with open(config_file, 'a') as f:
+    dict = {'Configuration_ID' : configuration_id, 'Instance_ID' : instance_id, 'Configuration' : conf_params}
+    f.write(str(dict) + "\n")
 # Clean files and exit
 os.remove(out_file)
 os.remove(err_file)

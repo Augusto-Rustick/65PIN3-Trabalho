@@ -12,7 +12,7 @@ combination = ''.join(sys.argv[5])
 conf_params = ' '.join(sys.argv[6:])
 
 # Call Python scripts that start simulation
-command = "python runner.py " + conf_params
+command = "python runner.py " +  conf_params + " " + instance
 
 # Define the stdout and stderr files
 r = str(random.randint(1, 999999))

@@ -4,14 +4,16 @@ from simulation_tools import start_simulation
 
 def run():
 
-    net = "ow"
     combination = sys.argv[1]
     param1 = sys.argv[2]
     param2 = sys.argv[3]
+    net = sys.argv[4]
+    instance = sys.argv[5]
+    instance = instance[::-1][0:instance[::-1].index("/")][::-1]
 
     # Original file is used for restoring the original file
-    original_file = f'./network_files/{net}.edg.xml'
-    modified_file = f'./network_files/{net}.edg-modified.xml'
+    original_file = f'./network_files/{net}/{net}.edg.xml'
+    modified_file = f'./network_files/{net}/{net}.edg-modified.xml'
 
     if combination == 'lane_net':
         apply_lane_expansion(param1, original_file, net)
@@ -23,7 +25,7 @@ def run():
         apply_net_expansion(f"{param1};100;1;60", original_file, net)
         apply_net_expansion(f"{param2};100;1;60", modified_file, net)
 
-    regenerate_network(100, net)
+    regenerate_network(int(instance), net)
     print(start_simulation())
 
 run()

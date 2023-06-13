@@ -1,7 +1,0 @@
-parameterFile = "./parameters.txt"
-trainInstancesDir = "./instances/A"
-trainInstancesFile = "./instances.txt"
-maxExperiments = 200
-digits = 5
-targetRunner = "./target-runner.bat"
-sampleInstances = TRUE

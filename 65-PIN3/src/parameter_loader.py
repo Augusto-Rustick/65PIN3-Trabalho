@@ -9,9 +9,9 @@ def regenerate_network(number_of_vehicles, net):
 
     trip_generator = '../shared/sumo/tools/randomTrips.py'
     commands = [
-        f'netconvert --node-files {src_folder}{net}.nod.xml --edge-files {src_folder}{net}.edg-modified.xml -o {src_folder}net.net.xml',
-        f'python {trip_generator} -n {src_folder}net.net.xml -e {number_of_vehicles} -o {src_folder}output.trips.xml',
-        f'duarouter -n {src_folder}net.net.xml --route-files {src_folder}output.trips.xml -o {src_folder}net.rou.xml --ignore-errors',
+        f'netconvert --node-files {src_folder}{net}/{net}.nod.xml --edge-files {src_folder}{net}/{net}.edg-modified.xml -o {src_folder}net.net.xml',
+        # f'python {trip_generator} -n {src_folder}net.net.xml -e {number_of_vehicles} -o {src_folder}{net}/trips/{net}{number_of_vehicles}output.trips.xml',
+        f'duarouter -n {src_folder}net.net.xml --route-files {src_folder}{net}/trips/{net}{number_of_vehicles}output.trips.xml -o {src_folder}net.rou.xml --ignore-errors',
     ]
 
     for command in commands:
@@ -36,7 +36,7 @@ def apply_lane_expansion(params, file, net):
     edgeB = xml.find('edge', {'id': id[::-1]})
     edgeB['numLanes'] = value
 
-    output_path = f'{src_folder}{net}.edg-modified.xml'
+    output_path = f'{src_folder}{net}/{net}.edg-modified.xml'
 
     output_dir = os.path.dirname(output_path)
     if not os.path.exists(output_dir):
@@ -67,7 +67,7 @@ def apply_net_expansion(params, file, net):
                                        'from': id[1], 'to': id[0], 'id': id[::-1], 'length': length, 'numLanes': nLanes, 'speed': speed})
     edges_tag.append(new_edge_tag_reverse)
 
-    output_path = f'{src_folder}{net}.edg-modified.xml'
+    output_path = f'{src_folder}{net}/{net}.edg-modified.xml'
 
     output_dir = os.path.dirname(output_path)
     if not os.path.exists(output_dir):

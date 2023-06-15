@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Projetos\vscode\65PIN3-Trabalho\65-PIN3\src\runner.py", line 30, in <module>
+    a
+NameError: name 'a' is not defined

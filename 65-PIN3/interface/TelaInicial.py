@@ -1,4 +1,9 @@
 import tkinter as tk
+import subprocess
+import threading
+import time
+import os
+
 
 class GUI(tk.Tk):
     def __init__(self):
@@ -103,28 +108,68 @@ class GUI(tk.Tk):
         cancel_button.pack(side="right", padx=(0, 10), pady=(0, 10))
 
     def on_confirm(self, confirm_window):
-        # Fecha a janela de confirmação
+        # Close the confirmation window
         confirm_window.destroy()
 
-        # Abre a janela de opções selecionadas
-        # Essa janela é apenas temporária para a entrega da fase 2
-        temporary_window = tk.Toplevel(self.master)
-        temporary_window.title("Opções selecionadas")
+        # Open the selected options window
+        result_window = tk.Toplevel(self.master)
+        result_window.title("Resultados: ")
 
-        # Obtém as opções selecionadas
+        # Get the selected options
         method = self.var_instance.get()
         option = self.var_method.get()
 
-        # Define o texto a ser exibido
-        text = f"Opções selecionadas: {method} e {option}"
+        print(method)
+        print(option)
 
-        # Cria o label com o texto e o adiciona na nova janela
-        label = tk.Label(temporary_window, text=text)
-        label.pack(pady=20)
+        if option == 'Irace':
+            result = self.run_irace(result_window)
+            self.display_result(result_window, result)
+        elif option == 'sla':
+            result = self.run_sla()
+            self.display_result(result_window, result)
 
-        # Ajusta a largura da nova janela com base na largura do label
-        width = label.winfo_reqwidth()+50
-        temporary_window.minsize(width, 100)
+    def run_irace(self, result_window):
+        # Navigate to the desired folder
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        target_dir = os.path.join(
+            current_dir, "..", "src", "irace_files", "nd")
+        os.chdir(target_dir)
+
+        # Capture the output of irace for later display
+        process = subprocess.Popen(
+            ['irace'],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
+        output, _ = process.communicate()
+        result = output.decode("utf-8")
+
+        # Create the console window
+        console_window = tk.Toplevel(self.master)
+        console_window.title("Console do irace")
+
+        # Create a Text widget to display the output of irace
+        console_text = tk.Text(console_window)
+        console_text.pack(fill=tk.BOTH, expand=True)
+
+        # Redirect the output of irace to the Text widget
+        def redirect_output():
+            console_text.insert(tk.END, result)
+            console_text.see(tk.END)
+            console_text.update_idletasks()
+
+        # Start the redirect thread
+        redirect_thread = threading.Thread(target=redirect_output)
+        redirect_thread.start()
+
+        return result
+
+    def display_result(self, result_window, result):
+        # Create a label to display the result
+        result_label = tk.Label(result_window, text=result)
+        result_label.pack()
+
+
 
 if __name__ == "__main__":
     gui = GUI()

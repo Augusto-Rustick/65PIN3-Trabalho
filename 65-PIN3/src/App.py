@@ -1,9 +1,11 @@
 import tkinter as tk
 import subprocess
 import threading
-import time
 import os
+from solver import *
 
+net = 'ow'
+clean_all_configurations()
 
 class GUI(tk.Tk):
     def __init__(self):
@@ -119,21 +121,23 @@ class GUI(tk.Tk):
         method = self.var_instance.get()
         option = self.var_method.get()
 
-        print(method)
-        print(option)
+        if method == 'Rede OW':
+            net = 'ow'
+        else:
+            net = 'nd'
 
         if option == 'Irace':
-            result = self.run_irace(result_window)
+            result = self.run_irace(result_window, net)
             self.display_result(result_window, result)
         elif option == 'sla':
             result = self.run_sla()
             self.display_result(result_window, result)
 
-    def run_irace(self, result_window):
+    def run_irace(self, result_window, net):
         # Navigate to the desired folder
         current_dir = os.path.dirname(os.path.abspath(__file__))
         target_dir = os.path.join(
-            current_dir, "..", "src", "irace_files", "nd")
+            current_dir, "..", "src", "irace_files", net)
         os.chdir(target_dir)
 
         # Capture the output of irace for later display
@@ -165,8 +169,8 @@ class GUI(tk.Tk):
         return result
 
     def display_result(self, result_window, result):
-        # Create a label to display the result
-        result_label = tk.Label(result_window, text=result)
+        result_text = str(get_all_elites_params(net))
+        result_label = tk.Label(result_window, text=result_text)
         result_label.pack()
 
 

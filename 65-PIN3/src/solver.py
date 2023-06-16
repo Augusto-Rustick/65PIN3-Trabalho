@@ -23,7 +23,7 @@ def extract_all_elites(net):
     subprocess.call(['Rscript', 'script.R'])
     time.sleep(1)
 
-    with open('allElites.txt', "r") as file:
+    with open(f'./65-PIN3/src/irace_files/{net}/allElites.txt', "r") as file:
         contents = file.read()
 
     matches = re.findall(r"c\((.*?)\)", contents)
@@ -34,7 +34,7 @@ def extract_all_elites(net):
 def get_all_elites_params(net):
 
     elites = extract_all_elites(net)
-    file_path = "configurations.txt"
+    file_path = f"./65-PIN3/src/irace_files/{net}/configurations.txt"
 
     configurations = {f'iteration_{i+1}' : [] for i in range(len(elites))}
     configurations_pool = {}
@@ -97,7 +97,7 @@ def start_simulation():
     
     return objective_function()
 
-def regenerate_network(number_of_vehicles, net):
+def regenerate_network(number_of_vehicles, net, src_folder=src_folder):
 
     commands = [
         f'netconvert --node-files {src_folder}{net}/{net}.nod.xml --edge-files {src_folder}{net}/{net}.edg-modified.xml -o {src_folder}net.net.xml',
@@ -112,7 +112,7 @@ def regenerate_network(number_of_vehicles, net):
             print('Command at regenerate_network returned code <' + str(return_code) + '>.')
             sys.exit(1)
 
-def apply_lane_expansion(params, file, net):
+def apply_lane_expansion(params, file, net, src_folder=src_folder):
 
     id, value = params.split(";")
 
@@ -137,7 +137,7 @@ def apply_lane_expansion(params, file, net):
     with open(output_path, 'wb') as f:
         f.write(pretty_xml_output.encode())
 
-def apply_net_expansion(params, file, net):
+def apply_net_expansion(params, file, net, src_folder=src_folder):
 
     id, length, nLanes, speed = params.split(';')
 

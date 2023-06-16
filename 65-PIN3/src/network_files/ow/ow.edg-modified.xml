@@ -14,8 +14,8 @@
  <edge from="C" id="CD" length="70.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="C" id="CF" length="110.00" numLanes="1" speed="60.00" to="F"/>
  <edge from="F" id="FC" length="110.00" numLanes="1" speed="60.00" to="C"/>
- <edge from="G" id="GC" length="90.00" numLanes="1" speed="60.00" to="C"/>
- <edge from="C" id="CG" length="90.00" numLanes="1" speed="60.00" to="G"/>
+ <edge from="G" id="GC" length="90.00" numLanes="2" speed="60.00" to="C"/>
+ <edge from="C" id="CG" length="90.00" numLanes="2" speed="60.00" to="G"/>
  <edge from="D" id="DE" length="70.00" numLanes="1" speed="60.00" to="E"/>
  <edge from="E" id="ED" length="70.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="G" id="GD" length="70.00" numLanes="1" speed="60.00" to="D"/>
@@ -34,8 +34,8 @@
  <edge from="G" id="GK" length="130.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KM" length="20.00" numLanes="1" speed="60.00" to="M"/>
  <edge from="M" id="MK" length="20.00" numLanes="1" speed="60.00" to="K"/>
- <edge from="J" id="JM" length="120.00" numLanes="2" speed="60.00" to="M"/>
- <edge from="M" id="MJ" length="120.00" numLanes="2" speed="60.00" to="J"/>
+ <edge from="J" id="JM" length="120.00" numLanes="1" speed="60.00" to="M"/>
+ <edge from="M" id="MJ" length="120.00" numLanes="1" speed="60.00" to="J"/>
  <edge from="J" id="JK" length="90.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KJ" length="90.00" numLanes="1" speed="60.00" to="J"/>
  <edge from="J" id="JL" length="120.00" numLanes="1" speed="60.00" to="L"/>

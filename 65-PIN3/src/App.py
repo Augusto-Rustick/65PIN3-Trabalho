@@ -3,6 +3,7 @@ import subprocess
 import threading
 import os
 from solver import *
+from graphview import *
 
 net = 'ow'
 clean_all_configurations()
@@ -169,9 +170,13 @@ class GUI(tk.Tk):
         return result
 
     def display_result(self, result_window, result):
-        result_text = str(get_all_elites_params(net))
-        result_label = tk.Label(result_window, text=result_text)
-        result_label.pack()
+        current_dir = os.getcwd()
+
+        for _ in range(4):
+            parent_dir = os.path.dirname(current_dir)
+            os.chdir(parent_dir)
+            current_dir = os.getcwd()
+        draw_graph(net)
 
 
 

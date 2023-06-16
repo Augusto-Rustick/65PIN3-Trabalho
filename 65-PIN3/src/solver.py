@@ -61,7 +61,7 @@ def clean_all_configurations():
         file.truncate()
 
 
-def start_simulation():
+def start_simulation(src_folder=src_folder):
 
     def create_command():
         cfg = f' -c {src_folder}net.sumo.cfg'

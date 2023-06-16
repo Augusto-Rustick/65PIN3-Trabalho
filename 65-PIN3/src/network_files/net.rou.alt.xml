@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-06-15 23:43:13 by Eclipse SUMO duarouter Version 1.16.0
+<!-- generated on 2023-06-16 13:38:28 by Eclipse SUMO duarouter Version 1.16.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
@@ -22,7 +22,7 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vehicle id="0" depart="0.00">
         <routeDistribution last="0">
-            <route cost="16.71" probability="1.00000000" edges="IJ JI IE EA AL"/>
+            <route cost="15.24" probability="1.00000000" edges="IJ JI IE EA AL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="1" depart="1.00">
@@ -37,107 +37,107 @@
     </vehicle>
     <vehicle id="3" depart="3.00">
         <routeDistribution last="0">
-            <route cost="15.52" probability="1.00000000" edges="LF FG GB BH"/>
+            <route cost="14.42" probability="1.00000000" edges="LF FJ JK KB BH"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="4" depart="4.00">
         <routeDistribution last="0">
-            <route cost="13.66" probability="1.00000000" edges="FL LF FE EA AL"/>
+            <route cost="13.87" probability="1.00000000" edges="FL LF FE EA AL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="5" depart="5.00">
         <routeDistribution last="0">
-            <route cost="19.65" probability="1.00000000" edges="DI IE EA AL LH HB"/>
+            <route cost="18.19" probability="1.00000000" edges="DI IE EA AL LH HB"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="6" depart="6.00">
         <routeDistribution last="0">
-            <route cost="19.44" probability="1.00000000" edges="AL LF FE EI ID DE"/>
+            <route cost="18.11" probability="1.00000000" edges="AL LF FE EI ID DE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="7" depart="7.00">
         <routeDistribution last="0">
-            <route cost="17.93" probability="1.00000000" edges="IM MC CB BH HG"/>
+            <route cost="17.07" probability="1.00000000" edges="IM MC CK KG GH HG"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="8" depart="8.00">
         <routeDistribution last="0">
-            <route cost="8.60" probability="1.00000000" edges="DI ID"/>
+            <route cost="7.10" probability="1.00000000" edges="DI ID"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="9" depart="9.00">
         <routeDistribution last="0">
-            <route cost="21.13" probability="1.00000000" edges="KC CB BH HL LA AE"/>
+            <route cost="23.59" probability="1.00000000" edges="KC CM MI IE EA AL LA AE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="10" depart="10.00">
         <routeDistribution last="0">
-            <route cost="13.57" probability="1.00000000" edges="KC CK KJ JI"/>
+            <route cost="17.89" probability="1.00000000" edges="KC CM MI IJ JI"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="11" depart="11.00">
         <routeDistribution last="0">
-            <route cost="15.74" probability="1.00000000" edges="FE EF FG GK KC CK"/>
+            <route cost="14.93" probability="1.00000000" edges="FE EI IM MC CK"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="12" depart="12.00">
         <routeDistribution last="0">
-            <route cost="9.89" probability="1.00000000" edges="MI IE EF FE"/>
+            <route cost="11.49" probability="1.00000000" edges="MI IE EF FE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="13" depart="13.00">
         <routeDistribution last="0">
-            <route cost="10.69" probability="1.00000000" edges="BH HB BK"/>
+            <route cost="9.44" probability="1.00000000" edges="BH HB BK"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="14" depart="14.00">
         <routeDistribution last="0">
-            <route cost="8.17" probability="1.00000000" edges="KJ JI IE"/>
+            <route cost="6.69" probability="1.00000000" edges="KJ JI IE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="15" depart="15.00">
         <routeDistribution last="0">
-            <route cost="13.44" probability="1.00000000" edges="KC CM MI IJ JK"/>
+            <route cost="13.15" probability="1.00000000" edges="KC CM MI IJ JK"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="16" depart="16.00">
         <routeDistribution last="0">
-            <route cost="16.51" probability="1.00000000" edges="HG GK KC CM MI"/>
+            <route cost="14.28" probability="1.00000000" edges="HG GK KC CM MI"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="17" depart="17.00">
         <routeDistribution last="0">
-            <route cost="8.60" probability="1.00000000" edges="FG GH HL"/>
+            <route cost="8.52" probability="1.00000000" edges="FG GH HL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="18" depart="18.00">
         <routeDistribution last="0">
-            <route cost="15.58" probability="1.00000000" edges="KG GK KJ JI IE"/>
+            <route cost="14.31" probability="1.00000000" edges="KG GK KJ JI IE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="19" depart="19.00">
         <routeDistribution last="0">
-            <route cost="11.47" probability="1.00000000" edges="LA AE EI ID"/>
+            <route cost="9.97" probability="1.00000000" edges="LA AE EI ID"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="20" depart="20.00">
         <routeDistribution last="0">
-            <route cost="10.63" probability="1.00000000" edges="JI IE EA AL"/>
+            <route cost="9.16" probability="1.00000000" edges="JI IE EA AL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="21" depart="21.00">
         <routeDistribution last="0">
-            <route cost="11.31" probability="1.00000000" edges="DI IE EF"/>
+            <route cost="9.84" probability="1.00000000" edges="DI IE EF"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="22" depart="22.00">
         <routeDistribution last="0">
-            <route cost="18.18" probability="1.00000000" edges="BH HL LA AE ED DI"/>
+            <route cost="18.40" probability="1.00000000" edges="BH HL LA AE ED DI"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="23" depart="23.00">
         <routeDistribution last="0">
-            <route cost="16.22" probability="1.00000000" edges="BK KG GF FE ED"/>
+            <route cost="16.31" probability="1.00000000" edges="BK KG GF FE ED"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="24" depart="24.00">
@@ -147,27 +147,27 @@
     </vehicle>
     <vehicle id="25" depart="25.00">
         <routeDistribution last="0">
-            <route cost="16.57" probability="1.00000000" edges="FG GK KJ JI ID DE"/>
+            <route cost="16.63" probability="1.00000000" edges="FG GK KJ JI ID DE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="26" depart="26.00">
         <routeDistribution last="0">
-            <route cost="10.58" probability="1.00000000" edges="ED DI IM MC"/>
+            <route cost="12.16" probability="1.00000000" edges="ED DI IM MC"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="27" depart="27.00">
         <routeDistribution last="0">
-            <route cost="15.37" probability="1.00000000" edges="IM MC CM MI IE"/>
+            <route cost="19.35" probability="1.00000000" edges="IM MC CK KJ JI IE"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="28" depart="28.00">
         <routeDistribution last="0">
-            <route cost="8.82" probability="1.00000000" edges="CM MI IJ JK"/>
+            <route cost="10.32" probability="1.00000000" edges="CM MI IJ JK"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="29" depart="29.00">
         <routeDistribution last="0">
-            <route cost="11.41" probability="1.00000000" edges="CK KG GF FG"/>
+            <route cost="11.18" probability="1.00000000" edges="CK KG GF FG"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="30" depart="30.00">
@@ -182,22 +182,22 @@
     </vehicle>
     <vehicle id="32" depart="32.00">
         <routeDistribution last="0">
-            <route cost="9.82" probability="1.00000000" edges="KJ JK KB"/>
+            <route cost="9.93" probability="1.00000000" edges="KJ JK KB"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="33" depart="33.00">
         <routeDistribution last="0">
-            <route cost="13.18" probability="1.00000000" edges="DI IE EA AL"/>
+            <route cost="11.72" probability="1.00000000" edges="DI IE EA AL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="34" depart="34.00">
         <routeDistribution last="0">
-            <route cost="12.41" probability="1.00000000" edges="EI IE ED"/>
+            <route cost="12.58" probability="1.00000000" edges="EI IE ED"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="35" depart="35.00">
         <routeDistribution last="0">
-            <route cost="13.28" probability="1.00000000" edges="DE EI IM MC"/>
+            <route cost="10.41" probability="1.00000000" edges="DE EI IM MC"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="36" depart="36.00">
@@ -207,7 +207,7 @@
     </vehicle>
     <vehicle id="37" depart="37.00">
         <routeDistribution last="0">
-            <route cost="22.52" probability="1.00000000" edges="IM MC CM MI IE EF FJ"/>
+            <route cost="19.39" probability="1.00000000" edges="IM MC CK KG GF FJ"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="38" depart="38.00">
@@ -217,22 +217,22 @@
     </vehicle>
     <vehicle id="39" depart="39.00">
         <routeDistribution last="0">
-            <route cost="14.73" probability="1.00000000" edges="ED DI IE EA"/>
+            <route cost="13.27" probability="1.00000000" edges="ED DI IE EA"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="40" depart="40.00">
         <routeDistribution last="0">
-            <route cost="10.46" probability="1.00000000" edges="HL LA AE ED"/>
+            <route cost="10.67" probability="1.00000000" edges="HL LA AE ED"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="41" depart="41.00">
         <routeDistribution last="0">
-            <route cost="14.54" probability="1.00000000" edges="ID DE EA AL LF"/>
+            <route cost="14.71" probability="1.00000000" edges="ID DE EA AL LF"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="42" depart="42.00">
         <routeDistribution last="0">
-            <route cost="20.52" probability="1.00000000" edges="FJ JF FE ED DI"/>
+            <route cost="20.64" probability="1.00000000" edges="FJ JF FE ED DI"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="43" depart="43.00">
@@ -242,22 +242,22 @@
     </vehicle>
     <vehicle id="44" depart="44.00">
         <routeDistribution last="0">
-            <route cost="17.60" probability="1.00000000" edges="BH HG GF FE EA AL"/>
+            <route cost="17.74" probability="1.00000000" edges="BH HG GF FE EA AL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="45" depart="45.00">
         <routeDistribution last="0">
-            <route cost="11.10" probability="1.00000000" edges="BK KJ JI IJ"/>
+            <route cost="11.21" probability="1.00000000" edges="BK KJ JI IJ"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="46" depart="46.00">
         <routeDistribution last="0">
-            <route cost="16.10" probability="1.00000000" edges="KC CK KG GF FL"/>
+            <route cost="17.81" probability="1.00000000" edges="KC CM MI IE EF FL"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="47" depart="47.00">
         <routeDistribution last="0">
-            <route cost="16.93" probability="1.00000000" edges="BC CK KG GF FJ"/>
+            <route cost="2.34" probability="1.00000000" edges="FJ"/>
         </routeDistribution>
     </vehicle>
     <vehicle id="48" depart="48.00">
@@ -267,7 +267,7 @@
     </vehicle>
     <vehicle id="49" depart="49.00">
         <routeDistribution last="0">
-            <route cost="14.34" probability="1.00000000" edges="MI IE EA AL LA"/>
+            <route cost="15.95" probability="1.00000000" edges="MI IE EA AL LA"/>
         </routeDistribution>
     </vehicle>
 </routes>

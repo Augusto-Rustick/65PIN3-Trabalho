@@ -173,5 +173,3 @@ def draw_graph(net):
     graph_visualizer = GraphVisualizer(graphs, connections_list)
 
     plt.show()
-
-draw_graph("nd")

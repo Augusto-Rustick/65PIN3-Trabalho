@@ -5,7 +5,6 @@ import os
 from solver import *
 from graphview import *
 
-net = 'ow'
 clean_all_configurations()
 
 class GUI(tk.Tk):
@@ -129,10 +128,10 @@ class GUI(tk.Tk):
 
         if option == 'Irace':
             result = self.run_irace(result_window, net)
-            self.display_result(result_window, result)
+            self.display_result(result_window, result, net)
         elif option == 'sla':
             result = self.run_sla()
-            self.display_result(result_window, result)
+            self.display_result(result_window, result, net)
 
     def run_irace(self, result_window, net):
         # Navigate to the desired folder
@@ -169,7 +168,7 @@ class GUI(tk.Tk):
 
         return result
 
-    def display_result(self, result_window, result):
+    def display_result(self, result_window, result, net):
         current_dir = os.getcwd()
 
         for _ in range(4):

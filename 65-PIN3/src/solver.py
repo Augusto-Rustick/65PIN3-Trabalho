@@ -192,3 +192,22 @@ def run():
 
     regenerate_network(int(instance), net)
     print(start_simulation())
+
+
+def run_with_params(combination, param1, param2, net, instance):
+    # Original file is used for restoring the original file
+    original_file = f'65-PIN3/src/network_files/{net}/{net}.edg.xml'
+    modified_file = f'65-PIN3/src/network_files/{net}/{net}.edg-modified.xml'
+
+    if combination == 'lane_net':
+        apply_lane_expansion(param1, original_file, net)
+        apply_net_expansion(f"{param2};100;1;60", modified_file, net)
+    if combination == 'lane_lane':
+        apply_lane_expansion(param1, original_file, net)
+        apply_lane_expansion(param2, modified_file, net)
+    if combination == 'net_net':
+        apply_net_expansion(f"{param1};100;1;60", original_file, net)
+        apply_net_expansion(f"{param2};100;1;60", modified_file, net)
+
+    regenerate_network(instance, net)
+    print(start_simulation())

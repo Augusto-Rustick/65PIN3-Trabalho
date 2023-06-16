@@ -4,8 +4,10 @@ import threading
 import os
 from solver import *
 from graphview import *
+import random
 
 clean_all_configurations()
+
 
 class GUI(tk.Tk):
     def __init__(self):
@@ -113,27 +115,19 @@ class GUI(tk.Tk):
         # Close the confirmation window
         confirm_window.destroy()
 
-        # Open the selected options window
-        result_window = tk.Toplevel(self.master)
-        result_window.title("Resultados: ")
-
         # Get the selected options
         method = self.var_instance.get()
         option = self.var_method.get()
-
-        if method == 'Rede OW':
-            net = 'ow'
-        else:
-            net = 'nd'
+        net = method.split(' ')[1].lower()
 
         if option == 'Irace':
-            result = self.run_irace(result_window, net)
-            self.display_result(result_window, result, net)
-        elif option == 'sla':
-            result = self.run_sla()
-            self.display_result(result_window, result, net)
+            result = self.run_irace(net)
+            self.display_result(result, net)
+        elif option == 'Simple Local Search':
+            result = self.run_sls(net)
+            # self.display_result( result, net)
 
-    def run_irace(self, result_window, net):
+    def run_irace(self,  net):
         # Navigate to the desired folder
         current_dir = os.path.dirname(os.path.abspath(__file__))
         target_dir = os.path.join(
@@ -168,7 +162,43 @@ class GUI(tk.Tk):
 
         return result
 
-    def display_result(self, result_window, result, net):
+    def run_sls(self, net):
+        self.run_sls_random(net)
+
+    LANE_VALUES = ["AL;2", "AE;2", "EF;2", "FL;2", "FG;2", "GH;2", "HL;2", "DE;2", "DI;2",
+                     "EI;2", "IJ;2", "IM;2", "FJ;2", "JK;2", "GK;2", "BK;2", "BH;2", "CM;2", "CK;2"]
+    CONNECTION_VALUES = ["AD", "AF", "BG", "BC", "CJ",
+                         "EJ", "EL", "FK", "FI", "GJ", "GL", "HK", "JM", "KM"]
+
+    def run_sls_random(self, net):
+        combination = random.choice(['lane_lane', 'net_net', 'lane_net'])
+        if combination == 'lane_lane':
+            # Randomly select values for laneA and laneB
+            param1 = random.choice(self.LANE_VALUES)
+            param2 = random.choice(self.LANE_VALUES)
+        elif combination == 'net_net':
+            # Randomly select values for connectionA and connectionB
+            param1 = random.choice(self.CONNECTION_VALUES)
+            param2 = random.choice(self.CONNECTION_VALUES)
+        elif combination == 'lane_net':
+            # Randomly select values for connection and lane
+            param1 = random.choice(self.LANE_VALUES)
+            param2 = random.choice(self.CONNECTION_VALUES)
+        instance = 150 #random.choice([50, 150, 200, 250])
+
+        self.execute_sls(combination, param1, param2, net, instance)
+
+    def execute_sls(self, combination, param1, param2, net, instance):
+        # Method implementation goes here
+        print(f"Running with combination: {combination}")
+        print(f"Param1: {param1}")
+        print(f"Param2: {param2}")
+        print(f"Net: {net}")
+        print(f"Instance: {instance}")
+        
+        run_with_params(combination, param1, param2, net, instance)
+
+    def display_result(self,  result, net):
         current_dir = os.getcwd()
 
         for _ in range(4):
@@ -176,7 +206,6 @@ class GUI(tk.Tk):
             os.chdir(parent_dir)
             current_dir = os.getcwd()
         draw_graph(net)
-
 
 
 if __name__ == "__main__":

@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "smac"
+    ],
+    "python.analysis.extraPaths": [
+        "./65-PIN3/src/solver/rs"
     ]
 }

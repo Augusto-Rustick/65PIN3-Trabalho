@@ -1,3 +1,5 @@
+#file for storing common scripts shared between all solvers
+
 import os
 import re
 import sys
@@ -6,60 +8,7 @@ import subprocess
 from bs4 import BeautifulSoup
 
 trip_generator = '../shared/sumo/tools/randomTrips.py'
-src_folder = './network_files/'
-
-def extract_all_elites(net):
-
-    file_path = f"./65-PIN3/src/irace_files/{net}/allElites.txt"
-    r_script = f"""
-        load('./65-PIN3/src/irace_files/{net}/irace.RData')
-        allElites <- iraceResults$allElites
-        dump('allElites', file="{file_path}")
-    """
-
-    with open('script.R', 'w') as f:
-        f.write(r_script)
-
-    subprocess.call(['Rscript', 'script.R'])
-    time.sleep(1)
-
-    with open(f'./65-PIN3/src/irace_files/{net}/allElites.txt', "r") as file:
-        contents = file.read()
-
-    matches = re.findall(r"c\((.*?)\)", contents)
-    result = [list(map(int, match.split(", "))) for match in matches]
-
-    return result
-
-def get_all_elites_params(net):
-
-    elites = extract_all_elites(net)
-    file_path = f"./65-PIN3/src/irace_files/{net}/configurations.txt"
-
-    configurations = {f'iteration_{i+1}' : [] for i in range(len(elites))}
-    configurations_pool = {}
-
-    with open(file_path, "r") as file:
-        configurations_pool = {int(line_dict['Configuration_ID']): line_dict for line_dict in (eval(line) for line in file)}
-
-    for counter, elite_set in enumerate(elites, start=1):
-        for elite_config in elite_set:
-            configurations[f'iteration_{counter}'].append(configurations_pool[elite_config]['Configuration'])
-
-        
-    return configurations
-
-def clean_all_configurations():
-    file_path = "65-PIN3/src/irace_files/ow/configurations.txt"
-
-    with open(file_path, "w") as file:
-        file.truncate()
-
-    file_path = "65-PIN3/src/irace_files/nd/configurations.txt"
-
-    with open(file_path, "w") as file:
-        file.truncate()
-
+src_folder = '65-PIN3/src/network_files/'
 
 def start_simulation(src_folder=src_folder):
 
@@ -167,7 +116,7 @@ def apply_net_expansion(params, file, net, src_folder=src_folder):
     with open(output_path, 'wb') as f:
         f.write(pretty_xml_output.encode())
 
-def run(combination=None, param1=None, param2=None, net=None, instance=None):
+def local_run(combination=None, param1=None, param2=None, net=None, instance=None):
 
     # for allowing parameters to be passed in by sys args or by python function call
     if  combination == None:
@@ -178,8 +127,8 @@ def run(combination=None, param1=None, param2=None, net=None, instance=None):
         instance = sys.argv[5]
         instance = instance[::-1][0:instance[::-1].index("/")][::-1]
 
-    original_file = f'./network_files/{net}/{net}.edg.xml'
-    modified_file = f'./network_files/{net}/{net}.edg-modified.xml'
+    original_file = f'{src_folder}/{net}/{net}.edg.xml'
+    modified_file = f'{src_folder}/{net}/{net}.edg-modified.xml'
 
     if combination == 'lane_net':
         apply_lane_expansion(param1, original_file, net)
@@ -192,4 +141,4 @@ def run(combination=None, param1=None, param2=None, net=None, instance=None):
         apply_net_expansion(f"{param2};100;1;60", modified_file, net)
 
     regenerate_network(int(instance), net)
-    print(start_simulation())
+    return start_simulation()

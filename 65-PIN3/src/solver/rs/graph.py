@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from matplotlib.widgets import Button
-from solver import *
+from utils import *
 
 src_folder = '65-PIN3/src/network_files/'
 titles = ["Grafo original"]
@@ -118,7 +118,7 @@ class GraphVisualizer:
             self.current_graph_index = 0
         self.update_graph()
 
-def draw_graph(net):
+def local_draw_graph(net, data):
 
     nodes_file = f"65-PIN3/src/network_files/{net}/{net}.nod.xml"
     edges_file = f"65-PIN3/src/network_files/{net}/{net}.edg.xml"
@@ -134,40 +134,36 @@ def draw_graph(net):
     graphs.append(graph)
     connections_list.append(connections)
 
-    iterations = get_all_elites_params(net)
-    for iteration in iterations:  
-        for count, modification in enumerate(iterations[iteration], start=1):
-            parameters = modification.split(" ")
-            combination = parameters[0] 
-            param1 = parameters[1]
-            param2 = parameters[2]
-            param4 = parameters[4]
-            param5 = parameters[5]
+    for i, iteration in enumerate(data, start=1):  
 
-            titles.append(f"{iteration} solution number {count}, got {param4} ({combination, param1, param2}, instance n{param5})")
+        titles.append(f"Solution number {i}, got {iteration['value']}, configuration {iteration['parameters']}")
 
-            original_file = f'65-PIN3/src/network_files/{net}/{net}.edg.xml'
-            modified_file = f'65-PIN3/src/network_files/{net}/{net}.edg-modified.xml'
+        combination = iteration['parameters'][0]
+        param1 = iteration['parameters'][1]
+        param2 = iteration['parameters'][2]
 
-            if combination == 'lane_net':
-                apply_lane_expansion(param1, original_file, net, src_folder)
-                apply_net_expansion(f"{param2};100;1;60", modified_file, net, src_folder)
-                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
-            if combination == 'lane_lane':
-                apply_lane_expansion(param1, original_file, net, src_folder)
-                apply_lane_expansion(param2, modified_file, net, src_folder)
-                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'red']]
-            if combination == 'net_net':
-                apply_net_expansion(f"{param1};100;1;60", original_file, net, src_folder)
-                apply_net_expansion(f"{param2};100;1;60", modified_file, net, src_folder)
-                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'green'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+        original_file = f'65-PIN3/src/network_files/{net}/{net}.edg.xml'
+        modified_file = f'65-PIN3/src/network_files/{net}/{net}.edg-modified.xml'
 
-            regenerate_network(50, net, src_folder)
+        if combination == 'lane_net':
+            apply_lane_expansion(param1, original_file, net, src_folder)
+            apply_net_expansion(f"{param2};100;1;60", modified_file, net, src_folder)
+            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+        if combination == 'lane_lane':
+            apply_lane_expansion(param1, original_file, net, src_folder)
+            apply_lane_expansion(param2, modified_file, net, src_folder)
+            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'red']]
+        if combination == 'net_net':
+            apply_net_expansion(f"{param1};100;1;60", original_file, net, src_folder)
+            apply_net_expansion(f"{param2};100;1;60", modified_file, net, src_folder)
+            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'green'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
 
-            graph = parse_nodes_file(nodes_file)
-            graph = parse_edges_file(edges_file2, graph)
-            graphs.append(graph)
-            connections_list.append(connections)
+        regenerate_network(50, net, src_folder)
+
+        graph = parse_nodes_file(nodes_file)
+        graph = parse_edges_file(edges_file2, graph)
+        graphs.append(graph)
+        connections_list.append(connections)
 
     graph_visualizer = GraphVisualizer(graphs, connections_list)
 

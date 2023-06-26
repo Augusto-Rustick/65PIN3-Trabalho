@@ -47,7 +47,7 @@ print(lastLine)
 # Save configuration to file
 config_file = f'./irace_files/{net}/configurations.txt'
 with open(config_file, 'a') as f:
-    dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id}
+    dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
     f.write(str(dict) + "\n")
 # Clean files and exit
 os.remove(out_file)

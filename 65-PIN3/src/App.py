@@ -5,9 +5,9 @@ import os
 from solver import *
 from graphview import *
 import random
+import sys
 
 clean_all_configurations()
-
 
 class GUI(tk.Tk):
     def __init__(self):
@@ -44,20 +44,20 @@ class GUI(tk.Tk):
             self.right_frame, text="Selecione um método:")
         self.label_right.pack(pady=(30, 10))
 
-        # Cria o radiobutton "Simple Local Search" no frame da direita
-        self.var_method = tk.StringVar(value="Simple Local Search")
+        # Cria o radiobutton "Melhor amostra aleatória" no frame da direita
+        self.var_method = tk.StringVar(value="Melhor amostra aleatória")
         self.radio_met_sls = tk.Radiobutton(
-            self.right_frame, text="Simple Local Search", variable=self.var_method, value="Simple Local Search")
+            self.right_frame, text="Melhor amostra aleatória", variable=self.var_method, value="Melhor amostra aleatória\n")
         self.radio_met_sls.pack(anchor="w")
 
         # Cria o radiobutton "Irace" no frame da direita
         self.radio_met_red = tk.Radiobutton(
-            self.right_frame, text="Irace", variable=self.var_method, value="Irace")
+            self.right_frame, text="Irace", variable=self.var_method, value="Irace\n")
         self.radio_met_red.pack(anchor="w")
 
-        # Cria o radiobutton "Configurador" no frame da direita
+        # Cria o radiobutton "SMAC" no frame da direita
         self.radio_met_red = tk.Radiobutton(
-            self.right_frame, text="Configurador", variable=self.var_method, value="Configurador")
+            self.right_frame, text="SMAC", variable=self.var_method, value="SMAC\n")
         self.radio_met_red.pack(anchor="w")
 
         # Cria o campo de texto 1 para o frame da esquerda
@@ -118,95 +118,21 @@ class GUI(tk.Tk):
         # Get the selected options
         method = self.var_instance.get()
         option = self.var_method.get()
+        experiments = self.textfield_left.get()
+        budget = self.textfield_right.get()
         net = method.split(' ')[1].lower()
 
-        if option == 'Irace':
-            result = self.run_irace(net)
-            self.display_result(result, net)
-        elif option == 'Simple Local Search':
-            result = self.run_sls(net)
-            # self.display_result( result, net)
-
-    def run_irace(self,  net):
-        # Navigate to the desired folder
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        target_dir = os.path.join(
-            current_dir, "..", "src", "irace_files", net)
-        os.chdir(target_dir)
-
-        # Capture the output of irace for later display
-        process = subprocess.Popen(
-            ['irace'],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE)
-        output, _ = process.communicate()
-        result = output.decode("utf-8")
-
-        # Create the console window
-        console_window = tk.Toplevel(self.master)
-        console_window.title("Console do irace")
-
-        # Create a Text widget to display the output of irace
-        console_text = tk.Text(console_window)
-        console_text.pack(fill=tk.BOTH, expand=True)
-
-        # Redirect the output of irace to the Text widget
-        def redirect_output():
-            console_text.insert(tk.END, result)
-            console_text.see(tk.END)
-            console_text.update_idletasks()
-
-        # Start the redirect thread
-        redirect_thread = threading.Thread(target=redirect_output)
-        redirect_thread.start()
-
-        return result
-
-    def run_sls(self, net):
-        self.run_sls_random(net)
-
-    LANE_VALUES = ["AL;2", "AE;2", "EF;2", "FL;2", "FG;2", "GH;2", "HL;2", "DE;2", "DI;2",
-                     "EI;2", "IJ;2", "IM;2", "FJ;2", "JK;2", "GK;2", "BK;2", "BH;2", "CM;2", "CK;2"]
-    CONNECTION_VALUES = ["AD", "AF", "BG", "BC", "CJ",
-                         "EJ", "EL", "FK", "FI", "GJ", "GL", "HK", "JM", "KM"]
-
-    def run_sls_random(self, net):
-        combination = random.choice(['lane_lane', 'net_net', 'lane_net'])
-        if combination == 'lane_lane':
-            # Randomly select values for laneA and laneB
-            param1 = random.choice(self.LANE_VALUES)
-            param2 = random.choice(self.LANE_VALUES)
-        elif combination == 'net_net':
-            # Randomly select values for connectionA and connectionB
-            param1 = random.choice(self.CONNECTION_VALUES)
-            param2 = random.choice(self.CONNECTION_VALUES)
-        elif combination == 'lane_net':
-            # Randomly select values for connection and lane
-            param1 = random.choice(self.LANE_VALUES)
-            param2 = random.choice(self.CONNECTION_VALUES)
-        instance = 150 #random.choice([50, 150, 200, 250])
-
-        self.execute_sls(combination, param1, param2, net, instance)
-
-    def execute_sls(self, combination, param1, param2, net, instance):
-        # Method implementation goes here
-        print(f"Running with combination: {combination}")
-        print(f"Param1: {param1}")
-        print(f"Param2: {param2}")
-        print(f"Net: {net}")
-        print(f"Instance: {instance}")
-        
-        run_with_params(combination, param1, param2, net, instance)
-
-    def display_result(self,  result, net):
-        current_dir = os.getcwd()
-
-        for _ in range(4):
-            parent_dir = os.path.dirname(current_dir)
-            os.chdir(parent_dir)
-            current_dir = os.getcwd()
-        draw_graph(net)
-
+        if option == 'Irace\n':
+            command = f'start cmd /K python 65-PIN3/src/irace_starter.py {net} {experiments}'
+            process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            process.communicate()
+            draw_graph(net)
+        elif option == 'Melhor amostra aleatória\n':
+            command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {budget}'
+            subprocess.run(command, shell=True)
+        elif option == 'SMAC\n':
+            command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {budget}'
+            subprocess.run(command, shell=True)
 
 if __name__ == "__main__":
     gui = GUI()

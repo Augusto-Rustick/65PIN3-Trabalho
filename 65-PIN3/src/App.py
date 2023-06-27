@@ -2,10 +2,11 @@ import tkinter as tk
 import subprocess
 import threading
 import os
+import sys
+sys.path.append("65-PIN3/src/solver/irace")
 from solver import *
 from graphview import *
 import random
-import sys
 
 clean_all_configurations()
 
@@ -123,7 +124,7 @@ class GUI(tk.Tk):
         net = method.split(' ')[1].lower()
 
         if option == 'Irace\n':
-            command = f'start cmd /K python 65-PIN3/src/irace_starter.py {net} {experiments}'
+            command = f'start cmd /K python 65-PIN3/src/solver/irace/starter.py {net} {experiments}'
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             process.communicate()
             draw_graph(net)

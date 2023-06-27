@@ -1,8 +1,16 @@
 {
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingModuleSource": "none"
+    },
     "cSpell.words": [
+        "matplotlib",
+        "networkx",
+        "pyplot",
         "smac"
     ],
     "python.analysis.extraPaths": [
-        "./65-PIN3/src/solver/rs"
-    ]
+        "./65-PIN3/src/solver/rs",
+        "./65-PIN3/src/solver/irace"
+    ],
 }

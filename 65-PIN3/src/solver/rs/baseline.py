@@ -79,7 +79,7 @@ def start(net=None, maxBudget=None, bulk=False):
 
     sorted_list = sorted(best_known_configurations, key=lambda conf: conf['value'], reverse=False)
     if not bulk:
-        local_draw_graph(net, sorted_list)
+        draw_graph(net, sorted_list)
     return sorted_list
 
 try:

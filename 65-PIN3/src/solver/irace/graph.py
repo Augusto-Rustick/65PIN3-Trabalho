@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from matplotlib.widgets import Button
 from utils import *
+from utils import get_all_elites_params
 
 SRC_FOLDER = '65-PIN3/src/solver/rs/network_files/'
 TITLES = ["Original Graph"]
@@ -111,7 +112,7 @@ def parse_edges_file(file_path, graph):
 
     return graph
 
-def draw_graph(net, data):
+def draw_graph(net):
     nodes_file = f"{SRC_FOLDER}{net}/{net}.nod.xml"
     edges_file = f"{SRC_FOLDER}{net}/{net}.edg.xml"
     edges_file2 = f"{SRC_FOLDER}{net}/{net}.edg-modified.xml"
@@ -125,34 +126,43 @@ def draw_graph(net, data):
     graphs.append(graph)
     connections_list.append(connections)
 
-    for i, iteration in enumerate(data, start=1):
-        TITLES.append(f"Solution number {i}, got {iteration['value']}, configuration {iteration['parameters']}")
+    iterations = get_all_elites_params(net)
+    for iteration in iterations:  
+        for count, modification in enumerate(iterations[iteration], start=1):
+            parameters = modification.split(" ")
+            combination = parameters[0] 
+            param1 = parameters[1]
+            param2 = parameters[2]
+            param4 = parameters[4]
+            param5 = parameters[5]
 
-        combination, param1, param2 = iteration['parameters']
+            TITLES.append(f"{iteration} solution number {count}, got {param4} ({combination, param1, param2}, instance n{param5})")
 
-        original_file = f'{SRC_FOLDER}/{net}/{net}.edg.xml'
-        modified_file = f'{SRC_FOLDER}/{net}/{net}.edg-modified.xml'
+            original_file = f'{SRC_FOLDER}/{net}/{net}.edg.xml'
+            modified_file = f'{SRC_FOLDER}/{net}/{net}.edg-modified.xml'
 
-        if combination == 'lane_net':
-            apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
-            apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
-        if combination == 'lane_lane':
-            apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
-            apply_lane_expansion(param2, modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'red']]
-        if combination == 'net_net':
-            apply_net_expansion(f"{param1};100;1;60", original_file, net, SRC_FOLDER)
-            apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'green'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+            if combination == 'lane_net':
+                apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
+                apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
+                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+            if combination == 'lane_lane':
+                apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
+                apply_lane_expansion(param2, modified_file, net, SRC_FOLDER)
+                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'red']]
+            if combination == 'net_net':
+                apply_net_expansion(f"{param1};100;1;60", original_file, net, SRC_FOLDER)
+                apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
+                connections = [[(f'{param1[0]}', f'{param1[1]}'), 'green'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
 
-        regenerate_network(50, net, SRC_FOLDER)
+            regenerate_network(50, net, SRC_FOLDER)
 
-        graph = parse_nodes_file(nodes_file)
-        graph = parse_edges_file(edges_file2, graph)
-        graphs.append(graph)
-        connections_list.append(connections)
+            graph = parse_nodes_file(nodes_file)
+            graph = parse_edges_file(edges_file2, graph)
+            graphs.append(graph)
+            connections_list.append(connections)
 
-    graph_visualizer = GraphVisualizer(graphs, connections_list)
+    GraphVisualizer(graphs, connections_list)
 
     plt.show()
+
+draw_graph('ow')

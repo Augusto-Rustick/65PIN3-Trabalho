@@ -1,14 +1,12 @@
 import tkinter as tk
 import subprocess
-import threading
-import os
 import sys
 sys.path.append("65-PIN3/src/solver/irace")
-from solver import *
-from graphview import *
-import random
-
-clean_all_configurations()
+sys.path.append("65-PIN3/src/solver/smac")
+sys.path.append("65-PIN3/src/solver/rs")
+from irace_utils import clean_all_configurations as clean_all_configurations_irace
+from smac_utils import *
+from irace_graph import draw_graph as draw_graph_irace
 
 class GUI(tk.Tk):
     def __init__(self):
@@ -124,10 +122,11 @@ class GUI(tk.Tk):
         net = method.split(' ')[1].lower()
 
         if option == 'Irace\n':
+            clean_all_configurations_irace()
             command = f'start cmd /K python 65-PIN3/src/solver/irace/starter.py {net} {experiments}'
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             process.communicate()
-            draw_graph(net)
+            draw_graph_irace(net)
         elif option == 'Melhor amostra aleatória\n':
             command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {budget}'
             subprocess.run(command, shell=True)

@@ -1,2 +1,2 @@
-from solver import run
+from irace_utils import run
 run()

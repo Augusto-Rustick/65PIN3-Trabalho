@@ -2,8 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from matplotlib.widgets import Button
-from utils import *
-from utils import get_all_elites_params
+from irace_utils import *
+from irace_utils import get_all_elites_params
 
 SRC_FOLDER = '65-PIN3/src/solver/rs/network_files/'
 TITLES = ["Original Graph"]
@@ -164,5 +164,3 @@ def draw_graph(net):
     GraphVisualizer(graphs, connections_list)
 
     plt.show()
-
-draw_graph('ow')

@@ -4,7 +4,7 @@ from utils import *
 from rich.console import Console
 from rich.table import Table
 from rich.live import Live
-from graph import *
+from rs_graph import *
 
 parameters = None
 

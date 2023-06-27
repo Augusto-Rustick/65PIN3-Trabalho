@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 
 trip_generator = '../../../shared/sumo/tools/randomTrips.py'
 src_folder = './network_files/'
+root_folder = '65-PIN3/src/solver/irace/'
+
 
 def extract_all_elites(net):
 
@@ -31,34 +33,38 @@ def extract_all_elites(net):
 
     return result
 
+
 def get_all_elites_params(net):
 
     elites = extract_all_elites(net)
     file_path = f"./65-PIN3/src/solver/irace/irace_files/{net}/configurations.txt"
 
-    configurations = {f'iteration_{i+1}' : [] for i in range(len(elites))}
+    configurations = {f'iteration_{i+1}': [] for i in range(len(elites))}
     configurations_pool = {}
 
     with open(file_path, "r") as file:
-        configurations_pool = {int(line_dict['Configuration_ID']): line_dict for line_dict in (eval(line) for line in file)}
+        configurations_pool = {int(line_dict['Configuration_ID']): line_dict for line_dict in (
+            eval(line) for line in file)}
 
     for counter, elite_set in enumerate(elites, start=1):
         for elite_config in elite_set:
-            configurations[f'iteration_{counter}'].append(configurations_pool[elite_config]['Configuration'])
+            configurations[f'iteration_{counter}'].append(
+                configurations_pool[elite_config]['Configuration'])
 
-        
     return configurations
 
+
 def clean_all_configurations():
-    file_path = "65-PIN3/src/solver/irace/irace_files/ow/configurations.txt"
+    file_path = f"{root_folder}irace_files/ow/configurations.txt"
 
     with open(file_path, "w") as file:
         file.truncate()
 
-    file_path = "65-PIN3/src/solver/irace/irace_files/nd/configurations.txt"
+    file_path = f"{root_folder}irace_files/nd/configurations.txt"
 
     with open(file_path, "w") as file:
         file.truncate()
+
 
 def start_simulation(src_folder=src_folder):
 
@@ -72,7 +78,8 @@ def start_simulation(src_folder=src_folder):
         return_code = subprocess.call(create_command(), shell=False)
 
         if return_code != 0:
-            print('Command at start_simulation returned code <' + str(return_code) + '>.')
+            print('Command at start_simulation returned code <' +
+                  str(return_code) + '>.')
             sys.exit(1)
 
     def load_file():
@@ -93,8 +100,9 @@ def start_simulation(src_folder=src_folder):
             total_step_halt += int(step['halting'])
 
         return steps
-    
+
     return objective_function()
+
 
 def regenerate_network(number_of_vehicles, net, src_folder=src_folder):
 
@@ -105,11 +113,14 @@ def regenerate_network(number_of_vehicles, net, src_folder=src_folder):
     ]
 
     for command in commands:
-        return_code = subprocess.call(command, shell=False, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        return_code = subprocess.call(
+            command, shell=False, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
         if return_code != 0:
-            print('Command at regenerate_network returned code <' + str(return_code) + '>.')
+            print('Command at regenerate_network returned code <' +
+                  str(return_code) + '>.')
             sys.exit(1)
+
 
 def apply_lane_expansion(params, file, net, src_folder=src_folder):
 
@@ -135,6 +146,7 @@ def apply_lane_expansion(params, file, net, src_folder=src_folder):
 
     with open(output_path, 'wb') as f:
         f.write(pretty_xml_output.encode())
+
 
 def apply_net_expansion(params, file, net, src_folder=src_folder):
 
@@ -166,10 +178,11 @@ def apply_net_expansion(params, file, net, src_folder=src_folder):
     with open(output_path, 'wb') as f:
         f.write(pretty_xml_output.encode())
 
+
 def run(combination=None, param1=None, param2=None, net=None, instance=None):
 
     # for allowing parameters to be passed in by sys args or by python function call
-    if  combination == None:
+    if combination == None:
         combination = sys.argv[1]
         param1 = sys.argv[2]
         param2 = sys.argv[3]

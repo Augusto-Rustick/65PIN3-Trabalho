@@ -4,6 +4,8 @@
         "reportMissingModuleSource": "none"
     },
     "cSpell.words": [
+        "etree",
+        "irace",
         "matplotlib",
         "networkx",
         "pyplot",

@@ -93,7 +93,7 @@ def start(net=None, maxBudget=None, bulk=False):
     if not bulk:
         draw_graph(net, sorted_list)
     else:
-        save_results_to_csv(sorted(all_known_configurations, key=lambda conf: conf['Custo Medio'], reverse=False), f'65-PIN3/src/results/rs/rs_optimization_{net}_results_{time.time()}.csv')
+        save_results_to_csv(sorted(all_known_configurations, key=lambda conf: conf['Custo Medio'], reverse=False), f'65-PIN3/src/results/rs/rs_optimization_{maxBudget}_{net}_results_{time.time()}.csv')
     return sorted_list
 
 def save_results_to_csv(results, filename):

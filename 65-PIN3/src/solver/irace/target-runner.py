@@ -54,7 +54,7 @@ if time != "0":
         dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
         f.write(str(dict) + "\n")
 
-    csv_file = f'irace_{net}_optimization_results_{time}.csv'
+    csv_file = f'irace_optimization_{net}_results_{time}.csv'
     conf_params_list = conf_params.split(" ")
     with open(csv_file, 'a', newline='') as file:
         writer = csv.writer(file)

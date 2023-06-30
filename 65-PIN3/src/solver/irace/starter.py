@@ -17,16 +17,20 @@ folder_path = f'65-PIN3/src/solver/irace/irace_files/{net}'
 
 if not bulk:
     subprocess.run(f'python 65-PIN3/src/solver/irace/irace_files/{net}/parameters.py placeholder', capture_output=True).stdout
+    os.chdir(folder_path)
+    subprocess.run(f'irace --max-experiments {int(max_experiments)}', shell=True)
 else:
     time = subprocess.run(f'python 65-PIN3/src/solver/irace/irace_files/{net}/parameters.py', capture_output=True).stdout
     time = str(time).replace("\\r\\n", "").replace("b", "").replace("'", "")
 
-    csv_file = f'65-PIN3\src\solver\irace\irace_{net}_optimization_results_{int(time)}.csv'
+    csv_file = f'65-PIN3\src\solver\irace\irace_optimization_{net}_results_{int(time)}.csv'
     with open(csv_file, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['ID', 'Configuracao', 'Qnt. Veiculos',
                         'Custo Individual', 'Custo Medio'])
         file.close()
 
-os.chdir(folder_path)
-subprocess.run(f'irace --max-experiments {int(max_experiments)}', shell=True)
+    os.chdir(folder_path)
+    process = subprocess.Popen(f'irace --max-experiments {int(max_experiments)}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process.communicate()
+

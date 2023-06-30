@@ -86,7 +86,7 @@ def optimize(network, n_trials=200, bulk=False, instances=['50', '100', '150', '
     results, configs, incumbent = smac._runhistory._data, smac._runhistory._config_ids, incumbent
     if eval(bulk):
         save_results_to_csv(
-            results, configs, f'65-PIN3/src/results/smac/smac_optimization_{network}_results_{time.time()}.csv')
+            results, configs, f'65-PIN3/src/results/smac/smac_optimization_{n_trials}_{network}_results_{time.time()}.csv')
     else:
         print("as bulk option is false, printing results to a visual graph, wait a few seconds...")
         draw_graph(network, format_data(results, configs))

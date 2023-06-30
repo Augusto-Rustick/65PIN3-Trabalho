@@ -1,6 +1,6 @@
 {
     "ow": {
-        "combination": ["lane_lane", "lane_net", "net_net"],
+        "combination": ["lane_lane", "lane_net"],
         "lane": ["AB;2", "AD;2", "AC;2", "EB;2", "DB;2", "DC;2", "CF;2", "GC;2", "DE;2", "GD;2", "HD;2", "GF;2", "HE;2", "GH;2", "KH;2", "KG;2", "KM;2", "JM;2", "JK;2", "JL;2", "JG;2", "FI;2", "JI;2", "LI;2"],
         "net" : ["FJ", "GI"]
     },

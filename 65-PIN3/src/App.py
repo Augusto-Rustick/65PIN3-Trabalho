@@ -123,15 +123,15 @@ class GUI(tk.Tk):
 
         if option == 'Irace\n':
             clean_all_configurations_irace()
-            command = f'start cmd /K python 65-PIN3/src/solver/irace/starter.py {net} {experiments}'
+            command = f'start cmd /K python 65-PIN3/src/solver/irace/starter.py {net} {experiments} False'
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             process.communicate()
             draw_graph_irace(net)
         elif option == 'Melhor amostra aleatória\n':
-            command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {budget}'
+            command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {experiments} False'
             subprocess.run(command, shell=True)
         elif option == 'SMAC\n':
-            command = f'start cmd /K python 65-PIN3/src/solver/rs/baseline.py {net} {budget}'
+            command = f'start cmd /K python 65-PIN3/src/solver/smac/runner_smac.py {net} {experiments} False'
             subprocess.run(command, shell=True)
 
 if __name__ == "__main__":

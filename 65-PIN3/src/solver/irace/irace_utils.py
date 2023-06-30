@@ -187,7 +187,7 @@ def run(combination=None, param1=None, param2=None, net=None, instance=None):
         param1 = sys.argv[2]
         param2 = sys.argv[3]
         net = sys.argv[4]
-        instance = sys.argv[5]
+        instance = sys.argv[6]
         instance = instance[::-1][0:instance[::-1].index("/")][::-1]
 
     original_file = f'./network_files/{net}/{net}.edg.xml'

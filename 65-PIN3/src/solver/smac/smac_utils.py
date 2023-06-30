@@ -1,70 +1,11 @@
 import os
-import re
 import sys
-import time
 import subprocess
 from bs4 import BeautifulSoup
 
 trip_generator = '../../../shared/sumo/tools/randomTrips.py'
 src_folder = './network_files/'
 root_folder = '65-PIN3/src/solver/irace/'
-
-
-def extract_all_elites(net):
-
-    file_path = f"./65-PIN3/src/solver/irace/irace_files/{net}/allElites.txt"
-    r_script = f"""
-        load('./65-PIN3/src/solver/irace/irace_files/{net}/irace.RData')
-        allElites <- iraceResults$allElites
-        dump('allElites', file="{file_path}")
-    """
-
-    with open('script.R', 'w') as f:
-        f.write(r_script)
-
-    subprocess.call(['Rscript', 'script.R'])
-    time.sleep(1)
-
-    with open(f'./65-PIN3/src/solver/irace/irace_files/{net}/allElites.txt', "r") as file:
-        contents = file.read()
-
-    matches = re.findall(r"c\((.*?)\)", contents)
-    result = [list(map(int, match.split(", "))) for match in matches]
-
-    return result
-
-
-def get_all_elites_params(net):
-
-    elites = extract_all_elites(net)
-    file_path = f"./65-PIN3/src/solver/irace/irace_files/{net}/configurations.txt"
-
-    configurations = {f'iteration_{i+1}': [] for i in range(len(elites))}
-    configurations_pool = {}
-
-    with open(file_path, "r") as file:
-        configurations_pool = {int(line_dict['Configuration_ID']): line_dict for line_dict in (
-            eval(line) for line in file)}
-
-    for counter, elite_set in enumerate(elites, start=1):
-        for elite_config in elite_set:
-            configurations[f'iteration_{counter}'].append(
-                configurations_pool[elite_config]['Configuration'])
-
-    return configurations
-
-
-def clean_all_configurations():
-    file_path = f"{root_folder}irace_files/ow/configurations.txt"
-
-    with open(file_path, "w") as file:
-        file.truncate()
-
-    file_path = f"{root_folder}irace_files/nd/configurations.txt"
-
-    with open(file_path, "w") as file:
-        file.truncate()
-
 
 def start_simulation(src_folder=src_folder):
 

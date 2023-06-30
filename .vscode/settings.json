@@ -5,11 +5,13 @@
     },
     "cSpell.words": [
         "etree",
+        "hyperparameters",
         "irace",
         "matplotlib",
         "networkx",
         "pyplot",
-        "smac"
+        "smac",
+        "timee"
     ],
     "python.analysis.extraPaths": [
         "./65-PIN3/src/solver/rs",

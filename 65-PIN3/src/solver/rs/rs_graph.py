@@ -116,6 +116,7 @@ def draw_graph(net, data):
     edges_file = f"{SRC_FOLDER}{net}/{net}.edg.xml"
     edges_file2 = f"{SRC_FOLDER}{net}/{net}.edg-modified.xml"
 
+
     graphs = []
     connections_list = []
 

@@ -2,6 +2,8 @@ import os
 import sys
 import subprocess
 import random
+import csv
+import pandas as pd
 
 # Get the parameters as command line arguments
 configuration_id = sys.argv[1]
@@ -10,7 +12,8 @@ seed = sys.argv[3]
 instance = sys.argv[4]
 combination = ''.join(sys.argv[5])
 conf_params = ' '.join(sys.argv[6:])
-net = sys.argv[-1]
+net = sys.argv[-2]
+time = sys.argv[-1]
 
 # Call Python scripts that start simulation
 command = "python run.py " +  conf_params + " " + instance
@@ -45,10 +48,26 @@ lastLine = int(float(lastLine.replace('\n', '')))
 print(lastLine)
 
 # Save configuration to file
-config_file = f'./irace_files/{net}/configurations.txt'
-with open(config_file, 'a') as f:
-    dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
-    f.write(str(dict) + "\n")
+if time != "0":
+    config_file = f'./irace_files/{net}/configurations.txt'
+    with open(config_file, 'a') as f:
+        dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
+        f.write(str(dict) + "\n")
+
+    csv_file = f'irace_{net}_optimization_results_{time}.csv'
+    conf_params_list = conf_params.split(" ")
+    with open(csv_file, 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([configuration_id, f'{conf_params_list[0]}-{conf_params_list[1]}-{conf_params_list[2]}', instance[::-1][0:instance[::-1].index("/")][::-1],
+                            int(lastLine), 0])
+        file.close()
+
+
+    df = pd.read_csv(csv_file)
+    df['Custo Medio'] = df.groupby('ID')['Custo Individual'].transform('mean')
+    df = df.sort_values('Custo Medio', ascending=True)
+    df.to_csv(csv_file, index=False)
+
 # Clean files and exit
 os.remove(out_file)
 os.remove(err_file)

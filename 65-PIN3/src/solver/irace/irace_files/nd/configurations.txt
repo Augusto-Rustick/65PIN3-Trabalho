@@ -1,41 +1,12 @@
-{'Configuration_ID': '1', 'Configuration': 'net_net AF GJ nd 796 1', 'Value': '796'}
-{'Configuration_ID': '2', 'Configuration': 'net_net GJ HK nd 1092 2', 'Value': '1092'}
-{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 FI nd 467 3', 'Value': '467'}
-{'Configuration_ID': '4', 'Configuration': 'net_net FI EJ nd 231 4', 'Value': '231'}
-{'Configuration_ID': '5', 'Configuration': 'lane_net CK;2 FK nd 1080 5', 'Value': '1080'}
-{'Configuration_ID': '6', 'Configuration': 'lane_lane FJ;2 AL;2 nd 798 6', 'Value': '798'}
-{'Configuration_ID': '7', 'Configuration': 'net_net HK GJ nd 1092 7', 'Value': '1092'}
-{'Configuration_ID': '8', 'Configuration': 'lane_lane AE;2 GK;2 nd 802 8', 'Value': '802'}
-{'Configuration_ID': '1', 'Configuration': 'net_net AF GJ nd 739 1', 'Value': '739'}
-{'Configuration_ID': '2', 'Configuration': 'net_net GJ HK nd 475 2', 'Value': '475'}
-{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 FI nd 420 3', 'Value': '420'}
-{'Configuration_ID': '4', 'Configuration': 'net_net FI EJ nd 170 4', 'Value': '170'}
-{'Configuration_ID': '5', 'Configuration': 'lane_net CK;2 FK nd 459 5', 'Value': '459'}
-{'Configuration_ID': '6', 'Configuration': 'lane_lane FJ;2 AL;2 nd 755 6', 'Value': '755'}
-{'Configuration_ID': '7', 'Configuration': 'net_net HK GJ nd 475 7', 'Value': '475'}
-{'Configuration_ID': '8', 'Configuration': 'lane_lane AE;2 GK;2 nd 736 8', 'Value': '736'}
-{'Configuration_ID': '1', 'Configuration': 'net_net AF GJ nd 2127 1', 'Value': '2127'}
-{'Configuration_ID': '2', 'Configuration': 'net_net GJ HK nd 1801 2', 'Value': '1801'}
-{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 FI nd 642 3', 'Value': '642'}
-{'Configuration_ID': '4', 'Configuration': 'net_net FI EJ nd 874 4', 'Value': '874'}
-{'Configuration_ID': '5', 'Configuration': 'lane_net CK;2 FK nd 2089 5', 'Value': '2089'}
-{'Configuration_ID': '6', 'Configuration': 'lane_lane FJ;2 AL;2 nd 1809 6', 'Value': '1809'}
-{'Configuration_ID': '7', 'Configuration': 'net_net HK GJ nd 1801 7', 'Value': '1801'}
-{'Configuration_ID': '8', 'Configuration': 'lane_lane AE;2 GK;2 nd 1510 8', 'Value': '1510'}
-{'Configuration_ID': '1', 'Configuration': 'net_net AF GJ nd 110 1', 'Value': '110'}
-{'Configuration_ID': '2', 'Configuration': 'net_net GJ HK nd 120 2', 'Value': '120'}
-{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 FI nd 117 3', 'Value': '117'}
-{'Configuration_ID': '4', 'Configuration': 'net_net FI EJ nd 108 4', 'Value': '108'}
-{'Configuration_ID': '5', 'Configuration': 'lane_net CK;2 FK nd 121 5', 'Value': '121'}
-{'Configuration_ID': '6', 'Configuration': 'lane_lane FJ;2 AL;2 nd 118 6', 'Value': '118'}
-{'Configuration_ID': '7', 'Configuration': 'net_net HK GJ nd 120 7', 'Value': '120'}
-{'Configuration_ID': '8', 'Configuration': 'lane_lane AE;2 GK;2 nd 108 8', 'Value': '108'}
-{'Configuration_ID': '1', 'Configuration': 'net_net AF GJ nd 255 1', 'Value': '255'}
-{'Configuration_ID': '2', 'Configuration': 'net_net GJ HK nd 266 2', 'Value': '266'}
-{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 FI nd 269 3', 'Value': '269'}
-{'Configuration_ID': '4', 'Configuration': 'net_net FI EJ nd 271 4', 'Value': '271'}
-{'Configuration_ID': '5', 'Configuration': 'lane_net CK;2 FK nd 267 5', 'Value': '267'}
-{'Configuration_ID': '6', 'Configuration': 'lane_lane FJ;2 AL;2 nd 269 6', 'Value': '269'}
-{'Configuration_ID': '7', 'Configuration': 'net_net HK GJ nd 266 7', 'Value': '266'}
-{'Configuration_ID': '8', 'Configuration': 'lane_lane AE;2 GK;2 nd 271 8', 'Value': '271'}
-{'Configuration_ID': '9', 'Configuration': 'lane_lane IJ;2 GH;2 nd 225 9', 'Value': '225'}
+{'Configuration_ID': '1', 'Configuration': 'net_net EL GJ nd 1688147908 117 1', 'Value': '117'}
+{'Configuration_ID': '2', 'Configuration': 'lane_lane FL;2 EI;2 nd 1688147908 107 2', 'Value': '107'}
+{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 EL nd 1688147908 109 3', 'Value': '109'}
+{'Configuration_ID': '4', 'Configuration': 'lane_lane BH;2 GH;2 nd 1688147908 120 4', 'Value': '120'}
+{'Configuration_ID': '5', 'Configuration': 'net_net EJ GL nd 1688147908 121 5', 'Value': '121'}
+{'Configuration_ID': '6', 'Configuration': 'net_net KM JM nd 1688147908 136 6', 'Value': '136'}
+{'Configuration_ID': '7', 'Configuration': 'lane_lane DE;2 IJ;2 nd 1688147908 125 7', 'Value': '125'}
+{'Configuration_ID': '1', 'Configuration': 'net_net EL GJ nd 1688147908 1808 1', 'Value': '1808'}
+{'Configuration_ID': '2', 'Configuration': 'lane_lane FL;2 EI;2 nd 1688147908 1707 2', 'Value': '1707'}
+{'Configuration_ID': '3', 'Configuration': 'lane_net AE;2 EL nd 1688147908 1496 3', 'Value': '1496'}
+{'Configuration_ID': '4', 'Configuration': 'lane_lane BH;2 GH;2 nd 1688147908 1550 4', 'Value': '1550'}
+{'Configuration_ID': '5', 'Configuration': 'net_net EJ GL nd 1688147908 1792 5', 'Value': '1792'}

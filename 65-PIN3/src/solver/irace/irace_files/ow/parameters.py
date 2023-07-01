@@ -24,4 +24,4 @@ time             " "                c          ("{timee}")
 
     return timee
 
-update_params_ow()
+print(update_params_ow())

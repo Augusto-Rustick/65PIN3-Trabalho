@@ -4,20 +4,38 @@ set bsln=65-PIN3/src/solver/rs/baseline.py
 
 @REM python <solver> <net> <maxExperiments> <ExportToCsv> <Instances>
 
-python %smac% nd 100 True
-python %smac% nd 200 True
-python %smac% nd 300 True
-python %smac% nd 400 True
-python %smac% nd 500 True
+@REM python %smac% nd 100 True
+@REM python %smac% nd 200 True
+@REM python %smac% nd 300 True
+@REM python %smac% nd 400 True
+@REM python %smac% nd 500 True
 
-python %bsln% nd 100 True
-python %bsln% nd 200 True
-python %bsln% nd 300 True
-python %bsln% nd 400 True
-python %bsln% nd 500 True
+@REM python %bsln% nd 100 True
+@REM python %bsln% nd 200 True
+@REM python %bsln% nd 300 True
+@REM python %bsln% nd 400 True
+@REM python %bsln% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
+
+@REM python %smac% ow 100 True
+@REM python %smac% ow 200 True
+@REM python %smac% ow 300 True
+@REM python %smac% ow 400 True
+@REM python %smac% ow 500 True
+
+@REM python %bsln% ow 100 True
+@REM python %bsln% ow 200 True
+@REM python %bsln% ow 300 True
+@REM python %bsln% ow 400 True
+@REM python %bsln% ow 500 True
+
+@REM python %irce% ow 180 True
+@REM python %irce% ow 200 True
+@REM python %irce% ow 300 True
+@REM python %irce% ow 400 True
+@REM python %irce% ow 500 True

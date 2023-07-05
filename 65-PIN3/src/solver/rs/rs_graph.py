@@ -116,7 +116,7 @@ def parse_edges_file(file_path, graph):
 
 def draw_graph(net, data):
 
-    TITLES.append(f"Original Graph, got {495.5 if net == 'ow' else 874}")
+    TITLES.append(f"Original Graph, got {654.2 if net == 'ow' else 1053.6}")
 
     nodes_file = f"{SRC_FOLDER}{net}/{net}.nod.xml"
     edges_file = f"{SRC_FOLDER}{net}/{net}.edg.xml"

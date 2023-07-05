@@ -23,7 +23,7 @@ else:
     time = subprocess.run(f'python 65-PIN3/src/solver/irace/irace_files/{net}/parameters.py', capture_output=True).stdout
     time = str(time).replace("\\r\\n", "").replace("b", "").replace("'", "")
 
-    csv_file = f'65-PIN3\src\solver\irace\irace_optimization_{net}_results_{int(time)}.csv'
+    csv_file = f'65-PIN3\src\solver\irace\{int(time)}_irace_optimization_{net}_results.csv'
     with open(csv_file, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['ID', 'Configuracao', 'Qnt. Veiculos',

@@ -55,7 +55,7 @@ with open(config_file, 'a') as f:
 # Save configuration to file
 if time != "0":
 
-    csv_file = f'irace_optimization_{net}_results_{time}.csv'
+    csv_file = f'{time}_irace_optimization_{net}_results.csv'
     conf_params_list = conf_params.split(" ")
     with open(csv_file, 'a', newline='') as file:
         writer = csv.writer(file)

@@ -6,16 +6,16 @@
  <edge from="E" id="EA" length="70.00" numLanes="1" speed="60.00" to="A"/>
  <edge from="E" id="EF" length="30.00" numLanes="1" speed="60.00" to="F"/>
  <edge from="F" id="FE" length="30.00" numLanes="1" speed="60.00" to="E"/>
- <edge from="F" id="FL" length="70.00" numLanes="2" speed="60.00" to="L"/>
- <edge from="L" id="LF" length="70.00" numLanes="2" speed="60.00" to="F"/>
+ <edge from="F" id="FL" length="70.00" numLanes="1" speed="60.00" to="L"/>
+ <edge from="L" id="LF" length="70.00" numLanes="1" speed="60.00" to="F"/>
  <edge from="F" id="FG" length="50.00" numLanes="1" speed="60.00" to="G"/>
  <edge from="G" id="GF" length="50.00" numLanes="1" speed="60.00" to="F"/>
  <edge from="G" id="GH" length="50.00" numLanes="1" speed="60.00" to="H"/>
  <edge from="H" id="HG" length="50.00" numLanes="1" speed="60.00" to="G"/>
  <edge from="H" id="HL" length="140.00" numLanes="1" speed="60.00" to="L"/>
  <edge from="L" id="LH" length="140.00" numLanes="1" speed="60.00" to="H"/>
- <edge from="D" id="DE" length="90.00" numLanes="2" speed="60.00" to="E"/>
- <edge from="E" id="ED" length="90.00" numLanes="2" speed="60.00" to="D"/>
+ <edge from="D" id="DE" length="90.00" numLanes="1" speed="60.00" to="E"/>
+ <edge from="E" id="ED" length="90.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="D" id="DI" length="120.00" numLanes="1" speed="60.00" to="I"/>
  <edge from="I" id="ID" length="120.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="E" id="EI" length="90.00" numLanes="1" speed="60.00" to="I"/>
@@ -38,4 +38,8 @@
  <edge from="M" id="MC" length="110.00" numLanes="1" speed="60.00" to="C"/>
  <edge from="C" id="CK" length="80.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KC" length="80.00" numLanes="1" speed="60.00" to="C"/>
+ <edge from="H" id="HK" length="100" numLanes="1" speed="60" to="K"/>
+ <edge from="K" id="KH" length="100" numLanes="1" speed="60" to="H"/>
+ <edge from="G" id="GJ" length="100" numLanes="1" speed="60" to="J"/>
+ <edge from="J" id="JG" length="100" numLanes="1" speed="60" to="G"/>
 </edges>

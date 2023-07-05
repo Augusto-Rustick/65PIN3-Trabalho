@@ -5,7 +5,7 @@ from matplotlib.widgets import Button
 from utils import *
 
 SRC_FOLDER = '65-PIN3/src/solver/rs/network_files/'
-TITLES = ["Original Graph"]
+TITLES = []
 
 class GraphVisualizer:
     def __init__(self, graphs, connections_list):
@@ -46,6 +46,7 @@ def visualize_graph(graph, connections=None):
     pos = nx.get_node_attributes(graph, 'pos')
     labels = nx.get_node_attributes(graph, 'id')
     edge_colors = ['black'] * graph.number_of_edges()
+    edge_styles = ['solid'] * graph.number_of_edges()
 
     if connections:
         for connection, color in connections:
@@ -58,30 +59,32 @@ def visualize_graph(graph, connections=None):
                     except ValueError:
                         edge_index = list(graph.edges()).index(edge[::-1])
                     edge_colors[edge_index] = color
-
-    nx.draw_networkx(graph, pos=pos, with_labels=True, node_size=500, font_size=10, edge_color=edge_colors)
-    nx.draw_networkx_labels(graph, pos, labels=labels, font_size=8)
+                    if color == 'red':
+                        edge_styles[edge_index] = 'dashed'
 
     duplicates = set()
     new_connections = set()
 
     if connections:
         for connection, color in connections:
-            if color == 'red':
+            if color == '#13cf45':
                 duplicates.update(connection)
-            elif color == 'green':
+            elif color == 'orange':
                 new_connections.update(connection)
 
+    nx.draw_networkx(graph, pos=pos, with_labels=True, node_size=500, font_size=10, edge_color=edge_colors, style=edge_styles, width=2)
+    nx.draw_networkx_labels(graph, pos, labels=labels, font_size=8)
+                
     red_labels = {node: node for node in duplicates}
-    green_labels = {node: node for node in new_connections}
+    orange_labels = {node: node for node in new_connections}
 
     nx.draw_networkx_labels(graph, pos, labels=red_labels, font_color='red', font_size=8)
-    nx.draw_networkx_labels(graph, pos, labels=green_labels, font_color='green', font_size=8)
+    nx.draw_networkx_labels(graph, pos, labels=orange_labels, font_color='orange', font_size=8)
 
     plt.legend(handles=[
-        plt.Line2D([], [], color='green', label='New Connections'),
-        plt.Line2D([], [], color='red', label='Expanded Roads'),
-        plt.Line2D([], [], color='red', label='High Traffic')
+        plt.Line2D([], [], color='orange', label='New Connections'),
+        plt.Line2D([], [], color='#13cf45', label='Expanded Roads'),
+        plt.Line2D([], [], linestyle='dashed', color='red', label='High Traffic')
     ])
 
 def parse_nodes_file(file_path):
@@ -112,21 +115,37 @@ def parse_edges_file(file_path, graph):
     return graph
 
 def draw_graph(net, data):
+
+    TITLES.append(f"Original Graph, got {495.5 if net == 'ow' else 874}")
+
     nodes_file = f"{SRC_FOLDER}{net}/{net}.nod.xml"
     edges_file = f"{SRC_FOLDER}{net}/{net}.edg.xml"
     edges_file2 = f"{SRC_FOLDER}{net}/{net}.edg-modified.xml"
 
+    hot_ow = [[('D', 'G'), 'red'], [('C', 'G'), 'red'], [('G', 'H'), 'red'], [('G', 'K'), 'red'], [('G', 'J'), 'red']]
+    hot_nd = [[('A', 'E'), 'red'], [('E', 'F'), 'red'], [('F', 'L'), 'red'], [('I', 'M'), 'red'], [('E', 'I'), 'red'], [('G', 'K'), 'red']]
 
     graphs = []
     connections_list = []
+    if net == 'ow':
+        connections_list.append(hot_ow)
+    elif net == 'nd':
+        connections_list.append(hot_nd)
 
     graph = parse_nodes_file(nodes_file)
     graph = parse_edges_file(edges_file, graph)
-    connections = []
     graphs.append(graph)
-    connections_list.append(connections)
 
     for i, iteration in enumerate(data, start=1):
+        connections = []
+
+        if net == 'ow':
+            for connection in hot_ow:
+                connections.append(connection)
+        elif net == 'nd':
+            for connection in hot_nd:
+                connections.append(connection)
+
         TITLES.append(f"Solution number {i}, got {iteration['value']}, configuration {iteration['parameters']}")
 
         combination, param1, param2 = iteration['parameters']
@@ -137,15 +156,18 @@ def draw_graph(net, data):
         if combination == 'lane_net':
             apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
             apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+            connections.append([(f'{param1[0]}', f'{param1[1]}'), '#13cf45'])
+            connections.append([(f'{param2[0]}', f'{param2[1]}'), 'orange'])
         if combination == 'lane_lane':
             apply_lane_expansion(param1, original_file, net, SRC_FOLDER)
             apply_lane_expansion(param2, modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'red'], [(f'{param2[0]}', f'{param2[1]}'), 'red']]
+            connections.append([(f'{param1[0]}', f'{param1[1]}'), '#13cf45'])
+            connections.append([(f'{param2[0]}', f'{param2[1]}'), '#13cf45'])
         if combination == 'net_net':
             apply_net_expansion(f"{param1};100;1;60", original_file, net, SRC_FOLDER)
             apply_net_expansion(f"{param2};100;1;60", modified_file, net, SRC_FOLDER)
-            connections = [[(f'{param1[0]}', f'{param1[1]}'), 'green'], [(f'{param2[0]}', f'{param2[1]}'), 'green']]
+            connections.append([(f'{param1[0]}', f'{param1[1]}'), 'orange'])
+            connections.append([(f'{param2[0]}', f'{param2[1]}'), 'orange'])
 
         regenerate_network(50, net, SRC_FOLDER)
 
@@ -154,6 +176,6 @@ def draw_graph(net, data):
         graphs.append(graph)
         connections_list.append(connections)
 
-    graph_visualizer = GraphVisualizer(graphs, connections_list)
+    GraphVisualizer(graphs, connections_list)
 
     plt.show()

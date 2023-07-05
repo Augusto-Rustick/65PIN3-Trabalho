@@ -2,9 +2,9 @@ set smac=65-PIN3/src/solver/smac/runner_smac.py
 set irce=65-PIN3/src/solver/irace/starter.py
 set bsln=65-PIN3/src/solver/rs/baseline.py
 
-@REM python <solver> <net> <maxExperiments> <ExportToCsv> <Instances>
+@REM python <solver> <net> <maxExperiments> <ExportToCsv>
 
-@REM python %smac% nd 100 True
+@REM python %smac% nd 100 True 
 @REM python %smac% nd 200 True
 @REM python %smac% nd 300 True
 @REM python %smac% nd 400 True

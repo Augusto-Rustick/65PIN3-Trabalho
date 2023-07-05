@@ -47,12 +47,13 @@ result.close()
 lastLine = int(float(lastLine.replace('\n', '')))
 print(lastLine)
 
+config_file = f'./irace_files/{net}/configurations.txt'
+with open(config_file, 'a') as f:
+    dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
+    f.write(str(dict) + "\n")
+
 # Save configuration to file
 if time != "0":
-    config_file = f'./irace_files/{net}/configurations.txt'
-    with open(config_file, 'a') as f:
-        dict = {'Configuration_ID' : configuration_id, 'Configuration' : conf_params + " " + str(lastLine) + " " + configuration_id, 'Value' : str(lastLine)}
-        f.write(str(dict) + "\n")
 
     csv_file = f'irace_optimization_{net}_results_{time}.csv'
     conf_params_list = conf_params.split(" ")

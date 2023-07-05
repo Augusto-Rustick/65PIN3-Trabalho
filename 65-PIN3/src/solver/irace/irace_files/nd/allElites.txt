@@ -1,2 +1,2 @@
 allElites <-
-list()
+list(c(2, 3, 7))

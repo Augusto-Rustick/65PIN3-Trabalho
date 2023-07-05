@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <edges>
- <edge from="A" id="AB" length="70.00" numLanes="1" speed="60.00" to="B"/>
- <edge from="B" id="BA" length="70.00" numLanes="1" speed="60.00" to="A"/>
+ <edge from="A" id="AB" length="70.00" numLanes="2" speed="60.00" to="B"/>
+ <edge from="B" id="BA" length="70.00" numLanes="2" speed="60.00" to="A"/>
  <edge from="A" id="AD" length="150.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="D" id="DA" length="150.00" numLanes="1" speed="60.00" to="A"/>
  <edge from="A" id="AC" length="50.00" numLanes="1" speed="60.00" to="C"/>
  <edge from="C" id="CA" length="50.00" numLanes="1" speed="60.00" to="A"/>
  <edge from="E" id="EB" length="110.00" numLanes="1" speed="60.00" to="B"/>
  <edge from="B" id="BE" length="110.00" numLanes="1" speed="60.00" to="E"/>
- <edge from="D" id="DB" length="110.00" numLanes="1" speed="60.00" to="B"/>
- <edge from="B" id="BD" length="110.00" numLanes="1" speed="60.00" to="D"/>
+ <edge from="D" id="DB" length="110.00" numLanes="2" speed="60.00" to="B"/>
+ <edge from="B" id="BD" length="110.00" numLanes="2" speed="60.00" to="D"/>
  <edge from="D" id="DC" length="70.00" numLanes="1" speed="60.00" to="C"/>
  <edge from="C" id="CD" length="70.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="C" id="CF" length="110.00" numLanes="1" speed="60.00" to="F"/>
@@ -46,8 +46,6 @@
  <edge from="I" id="IF" length="130.00" numLanes="1" speed="60.00" to="F"/>
  <edge from="J" id="JI" length="90.00" numLanes="1" speed="60.00" to="I"/>
  <edge from="I" id="IJ" length="90.00" numLanes="1" speed="60.00" to="J"/>
- <edge from="L" id="LI" length="20.00" numLanes="2" speed="60.00" to="I"/>
- <edge from="I" id="IL" length="20.00" numLanes="2" speed="60.00" to="L"/>
- <edge from="F" id="FJ" length="100" numLanes="1" speed="60" to="J"/>
- <edge from="J" id="JF" length="100" numLanes="1" speed="60" to="F"/>
+ <edge from="L" id="LI" length="20.00" numLanes="1" speed="60.00" to="I"/>
+ <edge from="I" id="IL" length="20.00" numLanes="1" speed="60.00" to="L"/>
 </edges>

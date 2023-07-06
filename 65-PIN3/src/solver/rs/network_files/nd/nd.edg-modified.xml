@@ -38,6 +38,6 @@
  <edge from="M" id="MC" length="110.00" numLanes="1" speed="60.00" to="C"/>
  <edge from="C" id="CK" length="80.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KC" length="80.00" numLanes="1" speed="60.00" to="C"/>
- <edge from="F" id="FK" length="100" numLanes="1" speed="60" to="K"/>
- <edge from="K" id="KF" length="100" numLanes="1" speed="60" to="F"/>
+ <edge from="B" id="BC" length="100" numLanes="1" speed="60" to="C"/>
+ <edge from="C" id="CB" length="100" numLanes="1" speed="60" to="B"/>
 </edges>

@@ -237,65 +237,65 @@ set bsln=65-PIN3/src/solver/rs/baseline.py
 @REM Irace tests
 @REM ND
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 
-python %irce% nd 180 True
-python %irce% nd 200 True
-python %irce% nd 300 True
-python %irce% nd 400 True
-python %irce% nd 500 True
+@REM python %irce% nd 180 True
+@REM python %irce% nd 200 True
+@REM python %irce% nd 300 True
+@REM python %irce% nd 400 True
+@REM python %irce% nd 500 True
 @REM OW
 
 python %irce% ow 180 True

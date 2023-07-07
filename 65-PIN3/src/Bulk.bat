@@ -236,123 +236,123 @@ set bsln=65-PIN3/src/solver/rs/baseline.py
 @REM python %bsln% ow 500 True
 @REM Irace tests
 @REM ND
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
-python %irce% nd 180 True
 
+python %irce% nd 180 True
 python %irce% nd 200 True
 python %irce% nd 300 True
 python %irce% nd 400 True
 python %irce% nd 500 True
 @REM OW
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True
 python %irce% ow 500 True
-python %irce% ow 180 True
 
+python %irce% ow 180 True
 python %irce% ow 200 True
 python %irce% ow 300 True
 python %irce% ow 400 True

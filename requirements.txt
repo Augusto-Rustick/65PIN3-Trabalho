@@ -1,0 +1,15 @@
+beautifulsoup4==4.12.2
+certifi==2023.5.7
+ConfigSpace==0.7.1
+ConfigSpace==0.7.1
+matplotlib==3.7.1
+networkx==3.0
+numpy==1.24.2
+pandas==2.0.2
+rich==13.4.2
+rtree==1.0.1
+scipy==1.11.1
+sumolib==1.18.0
+tqdm==4.65.0
+traci==1.18.0
+webWizard==0.0.4

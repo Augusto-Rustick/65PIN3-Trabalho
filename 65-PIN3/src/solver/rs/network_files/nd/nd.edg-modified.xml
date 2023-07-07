@@ -16,8 +16,8 @@
  <edge from="L" id="LH" length="140.00" numLanes="1" speed="60.00" to="H"/>
  <edge from="D" id="DE" length="90.00" numLanes="1" speed="60.00" to="E"/>
  <edge from="E" id="ED" length="90.00" numLanes="1" speed="60.00" to="D"/>
- <edge from="D" id="DI" length="120.00" numLanes="1" speed="60.00" to="I"/>
- <edge from="I" id="ID" length="120.00" numLanes="1" speed="60.00" to="D"/>
+ <edge from="D" id="DI" length="120.00" numLanes="2" speed="60.00" to="I"/>
+ <edge from="I" id="ID" length="120.00" numLanes="2" speed="60.00" to="D"/>
  <edge from="E" id="EI" length="90.00" numLanes="1" speed="60.00" to="I"/>
  <edge from="I" id="IE" length="90.00" numLanes="1" speed="60.00" to="E"/>
  <edge from="I" id="IJ" length="100.00" numLanes="1" speed="60.00" to="J"/>
@@ -38,6 +38,4 @@
  <edge from="M" id="MC" length="110.00" numLanes="1" speed="60.00" to="C"/>
  <edge from="C" id="CK" length="80.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KC" length="80.00" numLanes="1" speed="60.00" to="C"/>
- <edge from="B" id="BC" length="100" numLanes="1" speed="60" to="C"/>
- <edge from="C" id="CB" length="100" numLanes="1" speed="60" to="B"/>
 </edges>

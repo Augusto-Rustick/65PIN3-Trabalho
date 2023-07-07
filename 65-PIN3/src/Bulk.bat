@@ -136,51 +136,51 @@ set bsln=65-PIN3/src/solver/rs/baseline.py
 @REM @REM python %bsln% nd 100 True
 @REM @REM python %bsln% nd 200 True
 @REM @REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
-@REM python %bsln% nd 400 True
-@REM python %bsln% nd 500 True
-@REM python %bsln% nd 100 True
-@REM python %bsln% nd 200 True
-@REM python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
+python %bsln% nd 400 True
+python %bsln% nd 500 True
+python %bsln% nd 100 True
+python %bsln% nd 200 True
+python %bsln% nd 300 True
 @REM python %bsln% nd 400 True
 @REM python %bsln% nd 500 True
 @REM @REM OW

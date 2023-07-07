@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <edges>
- <edge from="A" id="AB" length="70.00" numLanes="1" speed="60.00" to="B"/>
- <edge from="B" id="BA" length="70.00" numLanes="1" speed="60.00" to="A"/>
+ <edge from="A" id="AB" length="70.00" numLanes="2" speed="60.00" to="B"/>
+ <edge from="B" id="BA" length="70.00" numLanes="2" speed="60.00" to="A"/>
  <edge from="A" id="AD" length="150.00" numLanes="1" speed="60.00" to="D"/>
  <edge from="D" id="DA" length="150.00" numLanes="1" speed="60.00" to="A"/>
  <edge from="A" id="AC" length="50.00" numLanes="1" speed="60.00" to="C"/>
@@ -28,8 +28,8 @@
  <edge from="E" id="EH" length="70.00" numLanes="1" speed="60.00" to="H"/>
  <edge from="G" id="GH" length="90.00" numLanes="1" speed="60.00" to="H"/>
  <edge from="H" id="HG" length="90.00" numLanes="1" speed="60.00" to="G"/>
- <edge from="K" id="KH" length="30.00" numLanes="2" speed="60.00" to="H"/>
- <edge from="H" id="HK" length="30.00" numLanes="2" speed="60.00" to="K"/>
+ <edge from="K" id="KH" length="30.00" numLanes="1" speed="60.00" to="H"/>
+ <edge from="H" id="HK" length="30.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KG" length="130.00" numLanes="1" speed="60.00" to="G"/>
  <edge from="G" id="GK" length="130.00" numLanes="1" speed="60.00" to="K"/>
  <edge from="K" id="KM" length="20.00" numLanes="1" speed="60.00" to="M"/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-07-07 04:42:44 by Eclipse SUMO duarouter Version 1.17.0
+<!-- generated on 2023-07-07 17:07:19 by Eclipse SUMO duarouter Version 1.17.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
         <net-file value="./network_files/net.net.xml"/>
-        <route-files value="./network_files/ow/trips/ow100output.trips.xml"/>
+        <route-files value="./network_files/nd/trips/nd50output.trips.xml"/>
     </input>
 
     <output>
@@ -21,303 +21,153 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vehicle id="0" depart="0.00">
-        <route edges="HG GF FC CA AC"/>
+        <route edges="IJ JI IE EA AL"/>
     </vehicle>
     <vehicle id="1" depart="0.00">
-        <route edges="DE ED DA"/>
+        <route edges="ED DI"/>
     </vehicle>
     <vehicle id="2" depart="0.00">
-        <route edges="JG GI IF"/>
+        <route edges="JK KJ JF"/>
     </vehicle>
     <vehicle id="3" depart="0.00">
-        <route edges="KJ JM MK KH HE EB BD"/>
+        <route edges="LF FJ JK KB BH"/>
     </vehicle>
     <vehicle id="4" depart="0.00">
-        <route edges="FG GC CA AC"/>
+        <route edges="FL LA AL"/>
     </vehicle>
     <vehicle id="5" depart="0.00">
-        <route edges="DA AC CG GF"/>
+        <route edges="DI IM MC CB BH HB"/>
     </vehicle>
     <vehicle id="6" depart="0.00">
-        <route edges="AC CG"/>
+        <route edges="AL LF FE ED DE"/>
     </vehicle>
     <vehicle id="7" depart="0.00">
-        <route edges="HK KH HG GJ"/>
+        <route edges="IM MC CB BH HG"/>
     </vehicle>
     <vehicle id="8" depart="0.00">
-        <route edges="DA AD DH HD"/>
+        <route edges="DI ID"/>
     </vehicle>
     <vehicle id="9" depart="0.00">
-        <route edges="JL LI IF FC CA AB"/>
+        <route edges="KC CM MI IE EA AE"/>
     </vehicle>
     <vehicle id="10" depart="0.00">
-        <route edges="JL LI IJ"/>
+        <route edges="KC CK KJ JI"/>
     </vehicle>
     <vehicle id="11" depart="0.00">
-        <route edges="EB BA AC CD"/>
+        <route edges="FE EF FG GK KC CK"/>
     </vehicle>
     <vehicle id="12" depart="0.00">
-        <route edges="LJ JM MK KH HE EB"/>
+        <route edges="MI IE EF FE"/>
     </vehicle>
     <vehicle id="13" depart="0.00">
-        <route edges="BD"/>
+        <route edges="BH HB BK"/>
     </vehicle>
     <vehicle id="14" depart="0.00">
-        <route edges="KG GK KH HD"/>
+        <route edges="KJ JI IE"/>
     </vehicle>
     <vehicle id="15" depart="0.00">
-        <route edges="JL LI IJ JG"/>
+        <route edges="KC CM MI IJ JK"/>
     </vehicle>
     <vehicle id="16" depart="0.00">
-        <route edges="GH HK KM MJ"/>
+        <route edges="HG GK KC CM MI"/>
     </vehicle>
     <vehicle id="17" depart="0.00">
-        <route edges="EH HG GJ"/>
+        <route edges="FG GH HL"/>
     </vehicle>
     <vehicle id="18" depart="0.00">
-        <route edges="JM MK KH HE"/>
+        <route edges="KG GK KJ JI IE"/>
     </vehicle>
     <vehicle id="19" depart="0.00">
-        <route edges="KH HG GK"/>
+        <route edges="LA AE EI ID"/>
     </vehicle>
     <vehicle id="20" depart="0.00">
-        <route edges="IJ JG GD DA AD"/>
+        <route edges="JI IE EA AL"/>
     </vehicle>
     <vehicle id="21" depart="0.00">
-        <route edges="DA AC CD DE"/>
+        <route edges="DI IE EF"/>
     </vehicle>
     <vehicle id="22" depart="0.00">
-        <route edges="BA AC CD DB"/>
+        <route edges="BH HL LA AD DI"/>
     </vehicle>
     <vehicle id="23" depart="0.00">
-        <route edges="BD DE"/>
+        <route edges="BK KG GF FE ED"/>
     </vehicle>
     <vehicle id="24" depart="0.00">
-        <route edges="HG GK KH HE ED"/>
+        <route edges="IJ JF FG"/>
     </vehicle>
     <vehicle id="25" depart="0.00">
-        <route edges="ED DA"/>
+        <route edges="FG GF FE ED DE"/>
     </vehicle>
     <vehicle id="26" depart="0.00">
-        <route edges="DC CG GJ JL LI"/>
+        <route edges="ED DI IM MC"/>
     </vehicle>
     <vehicle id="27" depart="0.00">
-        <route edges="HK KH HE"/>
+        <route edges="IM MC CM MI IE"/>
     </vehicle>
     <vehicle id="28" depart="0.00">
-        <route edges="CF FI IL"/>
+        <route edges="CM MI IJ JK"/>
     </vehicle>
     <vehicle id="29" depart="0.00">
-        <route edges="CD DE EH"/>
+        <route edges="CK KG GF FG"/>
     </vehicle>
     <vehicle id="30" depart="0.00">
-        <route edges="MK KH HG"/>
+        <route edges="IJ"/>
     </vehicle>
     <vehicle id="31" depart="0.00">
-        <route edges="GJ JL LI IF"/>
+        <route edges="HL LF FJ JF"/>
     </vehicle>
     <vehicle id="32" depart="0.00">
-        <route edges="KG GJ JK"/>
+        <route edges="KJ JK KB"/>
     </vehicle>
     <vehicle id="33" depart="0.00">
-        <route edges="DA AC"/>
+        <route edges="DI ID DA AL"/>
     </vehicle>
     <vehicle id="34" depart="0.00">
-        <route edges="DH HD DC"/>
+        <route edges="EI IE ED"/>
     </vehicle>
     <vehicle id="35" depart="0.00">
-        <route edges="DA AC CF FI IL LJ"/>
+        <route edges="DE EI IM MC"/>
     </vehicle>
     <vehicle id="36" depart="0.00">
-        <route edges="KJ JM MK KH HD DH"/>
+        <route edges="LA AE EI"/>
     </vehicle>
     <vehicle id="37" depart="0.00">
-        <route edges="HK KH HE EH"/>
+        <route edges="IM MC CK KG GF FJ"/>
     </vehicle>
     <vehicle id="38" depart="0.00">
-        <route edges="KM MJ JG GC"/>
+        <route edges="LH HG GH"/>
     </vehicle>
     <vehicle id="39" depart="0.00">
-        <route edges="DC CD DB"/>
+        <route edges="ED DE EA"/>
     </vehicle>
     <vehicle id="40" depart="0.00">
-        <route edges="GJ JG GD DC"/>
+        <route edges="HL LA AE ED"/>
     </vehicle>
     <vehicle id="41" depart="0.00">
-        <route edges="HD DH HK KM"/>
+        <route edges="ID DA AL LF"/>
     </vehicle>
     <vehicle id="42" depart="0.00">
-        <route edges="FC CD DA"/>
+        <route edges="FJ JI ID DI"/>
     </vehicle>
     <vehicle id="43" depart="0.00">
-        <route edges="MK KH HG GF"/>
+        <route edges="HB"/>
     </vehicle>
     <vehicle id="44" depart="0.00">
-        <route edges="BD DA AD"/>
+        <route edges="BH HL LA AL"/>
     </vehicle>
     <vehicle id="45" depart="0.00">
-        <route edges="BE EH HG"/>
+        <route edges="BK KJ JI IJ"/>
     </vehicle>
     <vehicle id="46" depart="0.00">
-        <route edges="JL LI IF FG"/>
+        <route edges="KC CK KG GF FL"/>
     </vehicle>
     <vehicle id="47" depart="0.00">
-        <route edges="BA AB BE EH"/>
+        <route edges="BC CK KG GF FJ"/>
     </vehicle>
     <vehicle id="48" depart="0.00">
-        <route edges="MK KG GH"/>
+        <route edges="HG"/>
     </vehicle>
     <vehicle id="49" depart="0.00">
-        <route edges="MJ JM MK KH"/>
-    </vehicle>
-    <vehicle id="50" depart="0.00">
-        <route edges="AB BA AC CF FI IL"/>
-    </vehicle>
-    <vehicle id="51" depart="0.00">
-        <route edges="IF FG GH"/>
-    </vehicle>
-    <vehicle id="52" depart="0.00">
-        <route edges="DC CG GH HG"/>
-    </vehicle>
-    <vehicle id="53" depart="0.00">
-        <route edges="BE EH HG GF FG"/>
-    </vehicle>
-    <vehicle id="54" depart="0.00">
-        <route edges="FI IL LJ"/>
-    </vehicle>
-    <vehicle id="55" depart="0.00">
-        <route edges="KJ JM MK KH HE ED DC"/>
-    </vehicle>
-    <vehicle id="56" depart="0.00">
-        <route edges="GF FC CF"/>
-    </vehicle>
-    <vehicle id="57" depart="0.00">
-        <route edges="KM MJ JM MK KH"/>
-    </vehicle>
-    <vehicle id="58" depart="0.00">
-        <route edges="DG GH HG"/>
-    </vehicle>
-    <vehicle id="59" depart="0.00">
-        <route edges="HE ED DC CD"/>
-    </vehicle>
-    <vehicle id="60" depart="0.00">
-        <route edges="JI IG GH"/>
-    </vehicle>
-    <vehicle id="61" depart="0.00">
-        <route edges="JK KG GH"/>
-    </vehicle>
-    <vehicle id="62" depart="0.00">
-        <route edges="AB BD DH"/>
-    </vehicle>
-    <vehicle id="63" depart="0.00">
-        <route edges="AB BE EH HK KJ JL LI"/>
-    </vehicle>
-    <vehicle id="64" depart="0.00">
-        <route edges="KJ JM"/>
-    </vehicle>
-    <vehicle id="65" depart="0.00">
-        <route edges="DG GD DA AD"/>
-    </vehicle>
-    <vehicle id="66" depart="0.00">
-        <route edges="KJ JI IL LJ"/>
-    </vehicle>
-    <vehicle id="67" depart="0.00">
-        <route edges="BD DG GD"/>
-    </vehicle>
-    <vehicle id="68" depart="0.00">
-        <route edges="BA AC CG GJ JI"/>
-    </vehicle>
-    <vehicle id="69" depart="0.00">
-        <route edges="JI IF FC CA"/>
-    </vehicle>
-    <vehicle id="70" depart="0.00">
-        <route edges="GC CG GJ"/>
-    </vehicle>
-    <vehicle id="71" depart="0.00">
-        <route edges="DC CG GK KH"/>
-    </vehicle>
-    <vehicle id="72" depart="0.00">
-        <route edges="FG GD DA"/>
-    </vehicle>
-    <vehicle id="73" depart="0.00">
-        <route edges="GH HG GJ JG"/>
-    </vehicle>
-    <vehicle id="74" depart="0.00">
-        <route edges="CG GD DG"/>
-    </vehicle>
-    <vehicle id="75" depart="0.00">
-        <route edges="MK KH HK"/>
-    </vehicle>
-    <vehicle id="76" depart="0.00">
-        <route edges="FI IG GF"/>
-    </vehicle>
-    <vehicle id="77" depart="0.00">
-        <route edges="BE ED DA"/>
-    </vehicle>
-    <vehicle id="78" depart="0.00">
-        <route edges="EB BD DH HD"/>
-    </vehicle>
-    <vehicle id="79" depart="0.00">
-        <route edges="DB BD DA"/>
-    </vehicle>
-    <vehicle id="80" depart="0.00">
-        <route edges="BA AD DH HG"/>
-    </vehicle>
-    <vehicle id="81" depart="0.00">
-        <route edges="DA AB BE EH HK KM"/>
-    </vehicle>
-    <vehicle id="82" depart="0.00">
-        <route edges="KH HE EB BA"/>
-    </vehicle>
-    <vehicle id="83" depart="0.00">
-        <route edges="DB BA AC CF FI IF"/>
-    </vehicle>
-    <vehicle id="84" depart="0.00">
-        <route edges="DA AC CA"/>
-    </vehicle>
-    <vehicle id="85" depart="0.00">
-        <route edges="LI IG GK"/>
-    </vehicle>
-    <vehicle id="86" depart="0.00">
-        <route edges="GC CG GJ JK"/>
-    </vehicle>
-    <vehicle id="87" depart="0.00">
-        <route edges="JL LI IF FC CG"/>
-    </vehicle>
-    <vehicle id="88" depart="0.00">
-        <route edges="BD DG GF FG"/>
-    </vehicle>
-    <vehicle id="89" depart="0.00">
-        <route edges="FG GC"/>
-    </vehicle>
-    <vehicle id="90" depart="0.00">
-        <route edges="IL LJ JL LI IF"/>
-    </vehicle>
-    <vehicle id="91" depart="0.00">
-        <route edges="MK KH HE EB BD"/>
-    </vehicle>
-    <vehicle id="92" depart="0.00">
-        <route edges="FC CD DE EB"/>
-    </vehicle>
-    <vehicle id="93" depart="0.00">
-        <route edges="KH HD DB"/>
-    </vehicle>
-    <vehicle id="94" depart="0.00">
-        <route edges="CG GF FI"/>
-    </vehicle>
-    <vehicle id="95" depart="0.00">
-        <route edges="FG GD DE"/>
-    </vehicle>
-    <vehicle id="96" depart="0.00">
-        <route edges="DB BD DG GJ JL LI"/>
-    </vehicle>
-    <vehicle id="97" depart="0.00">
-        <route edges="FI IJ JK KH"/>
-    </vehicle>
-    <vehicle id="98" depart="0.00">
-        <route edges="GJ JG GD DA AD"/>
-    </vehicle>
-    <vehicle id="99" depart="0.00">
-        <route edges="MK KG"/>
+        <route edges="MI IE EF FL LA"/>
     </vehicle>
 </routes>

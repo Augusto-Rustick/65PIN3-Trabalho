@@ -5,4 +5,4 @@ laneB           " "                 c          ("AL;2", "AE;2", "EF;2", "FL;2", 
 connectionA     " "                 c          ("AD", "AF", "BG", "BC", "CJ", "EJ", "EL", "FK", "FI", "GJ", "GL", "HK", "JM", "KM")  | combination %in% c("lane_net", "net_net")
 connectionB     " "                 c          ("AD", "AF", "BG", "BC", "CJ", "EJ", "EL", "FK", "FI", "GJ", "GL", "HK", "JM", "KM")  | combination %in% c("net_net")
 net             " "                 c          ("nd")
-time             " "                c          ("1688669716")
+time             " "                c          ("0")

@@ -8,6 +8,7 @@ from irace_utils import clean_all_configurations as clean_all_configurations_ira
 from smac_utils import *
 from irace_graph import draw_graph as draw_graph_irace
 
+
 class GUI(tk.Tk):
     def __init__(self):
         super().__init__()
